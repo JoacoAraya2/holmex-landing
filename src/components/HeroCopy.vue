@@ -5,7 +5,7 @@
     </h1>
 
     <p class="mt-6 max-w-[60ch] text-lg" :class="sobreVideo ? 'text-ink/85' : 'text-mute'">
-      HOLMEX automatiza el cálculo geométrico de frentes de avance en menos de 2 minutos. Reduce los
+      HOLMEX automatiza el cálculo geométrico de frentes de avance en menos de 5 minutos. Reduce los
       sobrecostos por sobreexcavación, predice la fragmentación (P80) y trabaja directamente en interior mina,
       sin conectividad de red ni suscripciones en la nube.
     </p>
@@ -25,7 +25,7 @@
       </div>
       <div>
         <dt class="text-[11px] uppercase tracking-widest text-mute">Con HOLMEX</dt>
-        <dd class="num mt-1 text-lg text-glint">&lt; 2 min</dd>
+        <dd class="num mt-1 text-lg text-glint">&lt; 5 min</dd>
       </div>
       <div>
         <dt class="text-[11px] uppercase tracking-widest text-mute">Red requerida</dt>

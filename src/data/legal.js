@@ -7,7 +7,7 @@ export const EMPRESA = {
   razonSocial: '[Razón social de HOLMEX]',
   rut: '[RUT]',
   domicilio: '[Domicilio comercial, comuna, región]',
-  ciudadTribunales: '[Ciudad]',
+  ciudadTribunales: 'La Serena',
   correo: CONTACT_EMAIL,
 }
 

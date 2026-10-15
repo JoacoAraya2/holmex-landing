@@ -18,9 +18,9 @@ export const CONTACT_EMAIL = 'contacto@holmex.cl'
 
 export const PROOF_POINTS = [
   {
-    cifra: '>96%',
+    cifra: '>90%',
     titulo: 'Reducción en tiempo de planificación',
-    texto: 'De 55–120 minutos de cálculo manual por disparo a menos de 2 minutos automatizados.',
+    texto: 'De 55–120 minutos de cálculo manual por disparo a menos de 5 minutos automatizados.',
   },
   {
     cifra: '0 red',
@@ -49,10 +49,10 @@ export const PROBLEMA = [
 
 export const SOLUCION = [
   'Cálculo analítico determinista de toda la malla: rainura, auxiliares, cajas, corona y zapateras.',
-  'Diseño listo en menos de 2 minutos, con la sección dibujada a escala antes de perforar.',
+  'Diseño listo en menos de 5 minutos, con la sección dibujada a escala antes de perforar.',
   'Carga ajustada por RMR y litología, con control de energía en el contorno para proteger techo y cajas.',
   'Guía limpia para el perforista con coordenadas, profundidad y secuencia de salida.',
-  'Expediente operacional inmediato en PDF, DXF y CSV con la procedencia de cada parámetro.',
+  'Expediente operacional inmediato en PDF, Excel, CSV e IREDES con la procedencia de cada parámetro.',
 ]
 
 export const FUNDAMENTOS = [
@@ -94,8 +94,8 @@ export const HERO_VIDEOS = [
   {
     src: '/media/hero-mineria-1080.mp4',
     etiqueta: 'Frente de avance',
-    titulo: 'Geometría del frente calculada en menos de 2 minutos',
-    dato: '< 2 min',
+    titulo: 'Geometría del frente calculada en menos de 5 minutos',
+    dato: '< 5 min',
     datoDetalle: 'Diseño del diagrama de disparo',
     // Autor: Dominik Zítka
     // https://www.pexels.com/video/underground-tunnel-construction-with-heavy-machinery-31752064/
@@ -137,7 +137,7 @@ export const LICENCIA = {
     { criterio: 'Modelo de cobro', valor: 'Pago único por equipo. Sin llaves USB físicas ni mensualidades.' },
     { criterio: 'Requisitos de red', valor: '100% offline nativo, también en interior mina.' },
     { criterio: 'Capacitación', valor: 'Adopción operacional en menos de 3 horas.' },
-    { criterio: 'Entregables a terreno', valor: 'Guías directas en PDF, DXF y CSV para el perforista.' },
+    { criterio: 'Entregables a terreno', valor: 'Memoria en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
     { criterio: 'Trazabilidad de fórmulas', valor: 'Cada constante con obra y página, o marcada como heurística.' },
   ],
   incluye: [
@@ -171,7 +171,7 @@ export const FICHA = [
   ['Interfaz', 'Vue 3 sobre Tauri v2'],
   ['Persistencia', 'SQLite local'],
   ['Inicio de la aplicación', '1,42 s (mediana)'],
-  ['Exportación DXF', '0,3 ms'],
+  ['Exportación', 'PDF, PNG, Excel, CSV e IREDES'],
   ['Cobertura de pruebas del núcleo', '87,5%'],
   ['Telemetría', 'Ninguna'],
 ]
@@ -192,7 +192,7 @@ export const EQUIPO = [
   {
     nombre: 'Joaquín Araya López',
     rol: 'Calidad y Exportación Técnica',
-    detalle: 'Subsistema de exportación PDF/DXF/CSV y plan de pruebas bajo ISO/IEC 25010.',
+    detalle: 'Subsistema de exportación PDF, Excel, CSV e IREDES y plan de pruebas bajo ISO/IEC 25010.',
     foto: 2,
   },
 ]
@@ -270,7 +270,7 @@ export const SOPORTE = {
 export const COMO_FUNCIONA = [
   { titulo: 'Ingrese la labor', texto: 'Sección, largo de barra, diámetros, explosivo y caracterización del macizo con RMR, Q y GSI.' },
   { titulo: 'Calcule en segundos', texto: 'El motor Holmberg dimensiona rainura, zapateras, cajas, coronas y auxiliares, y compara el modo estándar con el recomendado.' },
-  { titulo: 'Revise y ajuste', texto: 'Plano 2D acotado, vista 3D, mapa de energía, radio de daño y curva de fragmentación Kuz-Ram para validar el diseño.' },
+  { titulo: 'Revise y ajuste', texto: 'Plano 2D acotado, modelo 3D con desviación, simuladores de tiempos y de jumbo, mapa de energía y curva Kuz-Ram para validar el diseño.' },
   { titulo: 'Entregue a terreno', texto: 'Memoria técnica en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
 ]
 

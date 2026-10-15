@@ -1,15 +1,9 @@
 <template>
   <section id="equipo" class="blueprint border-y border-line/60">
     <div class="gutter mx-auto max-w-7xl py-20">
-      <div class="grid gap-6 lg:grid-cols-[1fr_2fr] lg:items-end">
-        <div>
-          <p class="eyebrow">Equipo fundador</p>
-          <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">Ingeniería de software al servicio de la tronadura</h2>
-        </div>
-        <p class="max-w-[62ch] text-mute lg:justify-self-end">
-          Tres ingenieros que trabajan con jefes de operación y planificadores P&amp;T para llevar la escuela sueca de
-          voladura a un software que se usa en la frente, con cada fórmula documentada.
-        </p>
+      <div>
+        <p class="eyebrow">Equipo fundador</p>
+        <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">Ingeniería de software al servicio de la tronadura</h2>
       </div>
 
       <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

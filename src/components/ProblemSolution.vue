@@ -39,7 +39,7 @@
             </li>
           </ul>
           <div class="mt-6 flex flex-wrap gap-2 border-t border-line/60 pt-5">
-            <span v-for="f in ['PDF', 'DXF', 'CSV']" :key="f" class="rounded bg-volt/20 px-2.5 py-1 font-mono text-xs text-glint">.{{ f.toLowerCase() }}</span>
+            <span v-for="f in ['PDF', 'XLSX', 'CSV', 'PNG']" :key="f" class="rounded bg-volt/20 px-2.5 py-1 font-mono text-xs text-glint">.{{ f.toLowerCase() }}</span>
             <span class="font-mono text-xs leading-7 text-mute">expediente por disparo</span>
           </div>
         </article>
