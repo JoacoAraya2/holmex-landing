@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/* Layout: hojas de plano técnico apiladas sobre fondo abisal; texto a la izquierda, láminas a la derecha. */
+@theme static {
+  --color-abyss: #070b14;
+  --color-abyss-2: #0a1124;
+  --color-panel: #0e1832;
+  --color-panel-2: #162447;
+  --color-line: #1e3a8a;
+  --color-line-hi: #2563eb;
+  --color-volt: #2563eb;
+  --color-ion: #00d2ff;
+  --color-glint: #38bdf8;
+  --color-ink: #f8fafc;
+  --color-mute: #94a3b8;
+  --color-warn: #f59e0b;
+  --color-h-zap: #3b82f6;
+  --color-h-cor: #ef4444;
+  --color-h-caj: #22c55e;
+
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background: var(--color-abyss);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+@layer components {
+.gutter {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 768px) {
+  .gutter {
+    padding-left: max(32px, env(safe-area-inset-left, 0px));
+    padding-right: max(32px, env(safe-area-inset-right, 0px));
+  }
+}
+
+.display {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: -0.02em;
+}
+.display-condensed {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 75;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-glint);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fondo de plano: grilla de 0,5 m sobre azul abisal */
+.blueprint {
+  background-color: var(--color-abyss-2);
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+}
+
+.sheet {
+  background: linear-gradient(180deg, var(--color-panel-2), var(--color-panel));
+  border: 1px solid var(--color-line);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.08), 0 24px 60px -30px rgba(0, 210, 255, 0.25);
+}
+
+.glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-ion), transparent);
+  opacity: 0.5;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--color-volt);
+  color: var(--color-ink);
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.8rem 1.25rem;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35) inset, 0 10px 30px -12px rgba(37, 99, 235, 0.9);
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-ink);
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.8rem 1.25rem;
+  border: 1px solid var(--color-line-hi);
+  background: rgba(14, 24, 50, 0.6);
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-ghost:hover {
+  border-color: var(--color-ion);
+  background: rgba(22, 36, 71, 0.9);
+}
+
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-ion);
+  outline-offset: 2px;
+}
+
+.field {
+  width: 100%;
+  background: var(--color-abyss-2);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  color: var(--color-ink);
+}
+.field::placeholder {
+  color: #5b6b85;
+}
+.field:focus {
+  border-color: var(--color-ion);
+  outline: none;
+}
+
+/* SVG de la malla */
+.mesh-contour { fill: rgba(56, 189, 248, 0.05); stroke: var(--color-ink); stroke-width: 2.5; }
+.mesh-dim { stroke: var(--color-glint); stroke-width: 1; fill: none; }
+.mesh-dim-text { fill: var(--color-glint); font-family: var(--font-mono); font-size: 13px; }
+.mesh-cut-line { stroke: var(--color-ink); stroke-width: 1.4; fill: none; opacity: 0.85; }
+.hole { stroke-width: 2; }
+.hole-rainura { fill: var(--color-abyss); stroke: var(--color-ink); }
+.hole-vacio { fill: var(--color-abyss); stroke: var(--color-ink); stroke-width: 2; }
+.hole-auxiliar, .hole-caja { fill: var(--color-h-caj); stroke: #14532d; }
+.hole-corona { fill: var(--color-h-cor); stroke: #7f1d1d; }
+.hole-zapatera { fill: var(--color-h-zap); stroke: #1e3a8a; }
+.hole-seq { fill: var(--color-mute); font-family: var(--font-mono); font-size: 10px; }
+
+.hole-anim {
+  animation: hole-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.4) backwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes hole-in {
+  from { opacity: 0; transform: scale(0.2); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hole-anim { animation: none; }
+}
+
+input[type="range"] {
+  accent-color: var(--color-ion);
+}
+
+/* Banner principal: progreso de cada clip y entrada de textos */
+.barra-progreso {
+  width: 0;
+  animation: barra-llenar linear forwards;
+}
+@keyframes barra-llenar {
+  to { width: 100%; }
+}
+.titulo-clip,
+.dato-hud {
+  animation: texto-entra 0.6s ease-out both;
+}
+@keyframes texto-entra {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.malla-hud .hole {
+  animation: hole-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.4) backwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.malla-hud .hole:nth-of-type(odd) { animation-delay: 0.15s; }
+.malla-hud .hole:nth-of-type(3n) { animation-delay: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+  .barra-progreso, .titulo-clip, .dato-hud, .malla-hud .hole { animation: none; }
+}
