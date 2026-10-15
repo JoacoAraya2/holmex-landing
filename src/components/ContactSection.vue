@@ -45,6 +45,14 @@
             <input id="f-insitu" v-model="form.insitu" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
             Solicito prueba de cálculo in situ para una labor subterránea
           </label>
+          <label for="f-piloto" class="flex items-start gap-3 rounded-md border border-line/70 bg-abyss-2 p-4 text-sm sm:col-span-2">
+            <input id="f-piloto" v-model="form.piloto" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
+            Quiero postular al Programa Piloto
+          </label>
+          <label for="f-privacidad" class="flex items-start gap-3 text-sm text-mute sm:col-span-2">
+            <input id="f-privacidad" v-model="form.aceptaPrivacidad" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
+            <span>Acepto que HOLMEX use estos datos para responder mi solicitud, según la <a href="#/privacidad" class="text-glint underline underline-offset-2 hover:text-ink">Política de Privacidad</a>.</span>
+          </label>
 
           <p v-if="error" class="rounded-md border border-h-cor/50 bg-h-cor/10 px-4 py-3 text-sm text-ink sm:col-span-2" role="alert">{{ error }}</p>
 
@@ -86,7 +94,7 @@ const PASOS = [
   'Propuesta de licencia perpetua por equipo y plan de puesta en marcha.',
 ]
 
-const form = reactive({ nombre: '', empresa: '', region: '', correo: '', telefono: '', insitu: true })
+const form = reactive({ nombre: '', empresa: '', region: '', correo: '', telefono: '', insitu: true, piloto: false, aceptaPrivacidad: false })
 const error = ref('')
 const enviando = ref(false)
 const enviado = ref(false)
@@ -101,6 +109,7 @@ const resumen = computed(() =>
     `Correo: ${form.correo}`,
     `Teléfono: ${form.telefono}`,
     `Prueba de cálculo in situ: ${form.insitu ? 'Sí' : 'No'}`,
+    `Postula al Programa Piloto: ${form.piloto ? 'Sí' : 'No'}`,
   ].join('\n'),
 )
 
@@ -112,6 +121,10 @@ async function enviar() {
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.correo)) {
     error.value = 'Revise el correo corporativo: debe tener el formato nombre@empresa.cl.'
+    return
+  }
+  if (!form.aceptaPrivacidad) {
+    error.value = 'Para enviar la solicitud debe aceptar la Política de Privacidad.'
     return
   }
   if (!ENDPOINT) {

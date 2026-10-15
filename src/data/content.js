@@ -2,11 +2,16 @@
 
 export const NAV = [
   { href: '#solucion', label: 'Solución' },
-  { href: '#ds132', label: 'Marco Legal DS 132' },
-  { href: '#simulador', label: 'Simulador Espacial' },
-  { href: '#licencia', label: 'Licencia y Precio' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '#como-funciona', label: 'Cómo funciona' },
+  { href: '#simulador', label: 'Simulador' },
+  { href: '#ds132', label: 'DS 132' },
+  { href: '#licencia', label: 'Precio' },
+  { href: '#piloto', label: 'Piloto' },
+  { href: '#preguntas', label: 'Preguntas' },
 ]
+
+// Dominio oficial del sitio (registro en NIC Chile).
+export const DOMINIO = 'holmex.cl'
 
 // Reemplazar por el correo comercial real antes de publicar el sitio.
 export const CONTACT_EMAIL = 'contacto@holmex.cl'
@@ -193,3 +198,110 @@ export const EQUIPO = [
 ]
 
 export const REGIONES = ['Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Otra región']
+
+// Número de WhatsApp comercial en formato internacional sin "+" ni espacios (ej. '56912345678').
+// Mientras esté vacío, el botón flotante de WhatsApp no se muestra.
+export const WHATSAPP = ''
+
+// Preguntas frecuentes (sección y datos estructurados para Google).
+export const FAQ = [
+  {
+    pregunta: '¿HOLMEX reemplaza al ingeniero de perforación y tronadura?',
+    respuesta:
+      'No. HOLMEX automatiza el cálculo y deja la memoria técnica por escrito, pero el diseño lo revisa, aprueba y firma el profesional de la faena, como exige el DS N° 132 (artículo 33). El software le ahorra horas de cálculo manual para que dedique ese tiempo a revisar y decidir.',
+  },
+  {
+    pregunta: '¿Qué método de cálculo usa?',
+    respuesta:
+      'El método de Roger Holmberg para frentes de avance, con rainura de cuatro cuadrantes en torno a un tiro de alivio, apoyado en Langefors–Kihlström, Holmberg–Persson y Kuz-Ram. Incluye evaluación geomecánica RMR (Bieniawski 1989), índice Q de Barton y GSI, y estima el radio de daño y una recomendación de soporte.',
+  },
+  {
+    pregunta: '¿Funciona sin internet en interior mina?',
+    respuesta:
+      'Sí. Es una aplicación de escritorio 100% offline. Los cálculos se guardan en una base de datos local del propio equipo y el software no envía telemetría ni datos de su faena a HOLMEX.',
+  },
+  {
+    pregunta: '¿En qué formatos entrega los resultados?',
+    respuesta:
+      'Exporta la malla y la memoria de cálculo en PDF, PNG, Excel y CSV, con las coordenadas de cada tiro, y en formato IREDES para cargar el diseño en jumbos compatibles con ese estándar. También importa datos MWD de la perforadora para control de calidad (QA/QC) de lo perforado.',
+  },
+  {
+    pregunta: '¿Qué computador necesito?',
+    respuesta:
+      'Recomendamos Windows 11 de 64 bits, que sigue recibiendo actualizaciones de seguridad. Como HOLMEX está hecho en Rust con Tauri, usa pocos recursos: basta un notebook de faena con 4 GB de RAM (8 GB recomendado). También funciona en Windows 10, aunque Microsoft dejó de darle soporte de seguridad en octubre de 2025.',
+  },
+  {
+    pregunta: '¿Qué pasa si cambio o se daña el computador?',
+    respuesta:
+      'La licencia es por equipo. Si necesita moverla a un computador nuevo, la traspasamos desactivando la instalación anterior. Este servicio tiene un costo adicional.',
+  },
+  {
+    pregunta: '¿Cuánto toma aprender a usarlo?',
+    respuesta:
+      'La capacitación inicial dura menos de 3 horas y está incluida en la licencia, junto con la instalación y una prueba de cálculo en una labor real.',
+  },
+  {
+    pregunta: '¿Cuánto cuesta?',
+    respuesta:
+      'USD 2.000 + IVA por equipo, en un solo pago y facturado en pesos chilenos, sin mensualidades ni llaves USB. Incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
+  },
+]
+
+// Qué incluye la licencia y qué servicios se cobran aparte. Revisar cada compromiso antes de publicar.
+export const SOPORTE = {
+  incluido: [
+    { titulo: 'Licencia perpetua', texto: 'El ejecutable de HOLMEX instalado en un equipo, sin mensualidades ni fecha de término.' },
+    { titulo: 'Puesta en marcha inicial', texto: 'Instalación en su computador de faena y validación de un cálculo con una labor real.' },
+    { titulo: 'Capacitación inicial', texto: 'Una capacitación para el equipo de P&T al momento de la instalación.' },
+    { titulo: 'Soporte por correo gratuito', texto: 'Consultas sobre el uso del software por correo, totalmente gratis y sin costo adicional, de lunes a viernes de 08:30 a 18:00 (hora de Chile).' },
+    { titulo: 'Garantía de cálculo', texto: 'Si detecta un error en el motor de cálculo de su versión, lo corregimos sin costo.' },
+  ],
+  adicional: [
+    { titulo: 'Viáticos y traslados', texto: 'Pasajes, alojamiento, alimentación y traslado a faena para cualquier visita en terreno.' },
+    { titulo: 'Actualizaciones', texto: 'Nuevas versiones y funciones posteriores a la versión adquirida.' },
+    { titulo: 'Mantenciones y visitas técnicas', texto: 'Revisiones, reinstalaciones o asistencia presencial que solicite la faena.' },
+    { titulo: 'Capacitaciones adicionales', texto: 'Para nuevos turnos o personal que se incorpore después de la capacitación inicial.' },
+    { titulo: 'Traspaso de licencia', texto: 'Mover la licencia a un computador nuevo, desactivando la instalación anterior.' },
+    { titulo: 'Desarrollos a medida', texto: 'Ajustes, reportes o integraciones especiales para su operación.' },
+  ],
+}
+
+// Sección "Cómo funciona": pasos del flujo de trabajo en el software.
+export const COMO_FUNCIONA = [
+  { titulo: 'Ingrese la labor', texto: 'Sección, largo de barra, diámetros, explosivo y caracterización del macizo con RMR, Q y GSI.' },
+  { titulo: 'Calcule en segundos', texto: 'El motor Holmberg dimensiona rainura, zapateras, cajas, coronas y auxiliares, y compara el modo estándar con el recomendado.' },
+  { titulo: 'Revise y ajuste', texto: 'Plano 2D acotado, vista 3D, mapa de energía, radio de daño y curva de fragmentación Kuz-Ram para validar el diseño.' },
+  { titulo: 'Entregue a terreno', texto: 'Memoria técnica en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
+]
+
+// Páginas de una memoria técnica real exportada desde HOLMEX (labor de 3,5 × 4 m), en public/memoria/.
+export const MEMORIA_EJEMPLO = [
+  { src: '/memoria/resumen.jpg', titulo: 'Resumen y consumo de explosivo', ancho: 952, alto: 1347 },
+  { src: '/memoria/plano-acotado.jpg', titulo: 'Plano 2D acotado', ancho: 952, alto: 1347 },
+  { src: '/memoria/geomecanica.jpg', titulo: 'Dossier geomecánico y daño', ancho: 952, alto: 1347 },
+  { src: '/memoria/vista-3d.jpg', titulo: 'Vista 3D de la excavación', ancho: 1347, alto: 952 },
+]
+
+// Requisitos del computador donde se instala HOLMEX.
+export const REQUISITOS = [
+  ['Sistema operativo', 'Windows 11 de 64 bits (recomendado). Compatible con Windows 10.'],
+  ['Procesador', '64 bits, 2 núcleos a 1 GHz o más'],
+  ['Memoria RAM', '4 GB mínimo · 8 GB recomendado'],
+  ['Espacio en disco', 'Menos de 100 MB, más el historial de cálculos'],
+  ['Componentes', 'Microsoft WebView2: viene con Windows 11 y el instalador lo agrega en Windows 10'],
+  ['Internet', 'No requerida para instalar licencia ni para calcular'],
+]
+
+// Programa piloto. Actualizar "ocupados" a medida que se sumen faenas.
+export const PILOTO = {
+  cupos: 5,
+  ocupados: 0,
+  duracion: '30 días',
+  beneficios: [
+    'Instalación, capacitación y acompañamiento directo del equipo fundador sin costo durante el piloto. Solo se cobran los viáticos.',
+    'Cálculo de sus labores reales comparado con su método actual.',
+    'Condición comercial preferente para la licencia al terminar el piloto.',
+    'Sus comentarios influyen en las próximas versiones del software.',
+  ],
+  requisitos: 'Faenas subterráneas con avance horizontal en Chile, con un profesional de P&T que use el software durante el piloto.',
+}

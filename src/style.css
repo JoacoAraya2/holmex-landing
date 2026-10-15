@@ -18,7 +18,7 @@
   --color-h-cor: #ef4444;
   --color-h-caj: #22c55e;
 
-  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-display: "Archivo Variable", "Archivo", "Arial Narrow", system-ui, sans-serif;
   --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
