@@ -296,3 +296,38 @@ export const PILOTO = {
   ],
   requisitos: 'Faenas subterráneas con avance horizontal en Chile, con un profesional de P&T que use el software durante el piloto.',
 }
+
+// DS N° 132, Título XV (pequeña minería, hasta 5.000 t/mes), texto del Decreto N° 1 de 2024 (Diario Oficial, 09-04-2024).
+// Cada fila: qué exige el artículo y cómo lo apoya HOLMEX.
+export const DS132_TITULO_XV = [
+  {
+    articulo: 'Art. 601 N° 13 a',
+    exige: 'Describir con figuras o planos el diagrama de disparo de cada labor o tipo de sección, con el diámetro y la profundidad de perforación.',
+    holmex: 'Plano 2D acotado de la malla para cada sección, con diámetros de tiros cargados y de alivio y largo de perforación.',
+  },
+  {
+    articulo: 'Art. 601 N° 13 b.1 y b.3',
+    exige: 'Indicar las cantidades de explosivo por tiro y por disparo, y el factor de carga de cada tipo de labor.',
+    holmex: 'Carga por tiro y por zona, consumo total de explosivo del disparo y factor de carga en kg/m³.',
+  },
+  {
+    articulo: 'Art. 601 N° 13 b.2',
+    exige: 'Indicar el tipo de conexión y la secuencia de iniciación de cada tipo de disparo.',
+    holmex: 'Secuencia de salida de los tiros, revisable en el simulador de tiempos.',
+  },
+  {
+    articulo: 'Art. 601 N° 13 b.4',
+    exige: 'Indicar el avance esperado por disparo en cada labor.',
+    holmex: 'Avance efectivo estimado según el largo de barra, junto al volumen teórico excavado.',
+  },
+  {
+    articulo: 'Art. 601 N° 15',
+    exige: 'Proponer el diagrama de disparo estándar que se usará en las labores de avance.',
+    holmex: 'Diseño estándar Holmberg y diseño optimizado para cada sección, como base del diagrama que se presenta en el proyecto.',
+  },
+  {
+    articulo: 'Art. 609 letra d y art. 648',
+    exige: 'Perforar según el diagrama de disparo establecido y mantener en la faena el registro del diagrama utilizado y de sus modificaciones.',
+    holmex: 'Historial local de cada cálculo con su fecha y parámetros, como respaldo del diagrama utilizado y de sus cambios.',
+  },
+]

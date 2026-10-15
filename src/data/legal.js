@@ -119,7 +119,7 @@ export const TERMINOS = {
     {
       titulo: 'Responsabilidad técnica de la empresa minera (DS N° 132)',
       parrafos: [
-        'El Reglamento de Seguridad Minera (Decreto Supremo N° 132 de 2002, Ministerio de Minería) asigna a la empresa minera y a sus profesionales la responsabilidad sobre el diseño y la ejecución de las obras. En particular:',
+        'El Reglamento de Seguridad Minera (Decreto Supremo N° 132 de 2002, Ministerio de Minería, con sus modificaciones, incluido el Decreto N° 1 de 2024) asigna a la empresa minera y a sus profesionales la responsabilidad sobre el diseño y la ejecución de las obras. En particular:',
       ],
       lista: [
         'Artículo 33: los ingenieros a cargo de la faena firman todo proyecto y se hacen responsables por las obras mineras cuya ejecución tengan a cargo.',
@@ -127,6 +127,9 @@ export const TERMINOS = {
         'Artículo 537: esas operaciones deben estar normalizadas por procedimientos internos de la faena (personal, equipos, carguío y tronadura).',
         'Artículos 25 y 26: la empresa minera debe mantener reglamentos internos de sus operaciones críticas y un sistema documentado de procedimientos.',
         'Artículo 570: cuando una tronadura pueda afectar instalaciones o poblados cercanos, corresponde a la Administración adoptar las medidas de control.',
+        'Artículo 601 (Título XV, pequeña minería): el Proyecto Minero, elaborado y suscrito por un ingeniero proyectista, debe describir el diagrama de disparo, las cantidades de explosivo, el factor de carga y el avance esperado de cada labor.',
+        'Artículo 609: las empresas o productores mineros deben velar permanentemente por la seguridad de las personas, disponer de procedimientos de perforación y tronadura, y mantener el registro del diagrama de disparo utilizado y de sus modificaciones.',
+        'Artículo 648: la perforación debe realizarse conforme al diagrama de disparo establecido por la empresa o productor minero.',
       ],
       cierre:
         'En consecuencia, la aprobación, firma y ejecución de cada diseño, así como la seguridad de las personas en la faena, son responsabilidad de la empresa minera, de su Administración y de sus profesionales. HOLMEX entrega el cálculo y la memoria técnica como apoyo a esas decisiones.',
