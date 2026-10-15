@@ -1,6 +1,6 @@
 // Publicación en Cloudflare Workers como sitio estático: se sube la carpeta dist/ que genera `npm run build`.
 {
-  "name": "holmex-landing",
+  "name": "holmex",
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./dist",
