@@ -1,9 +1,13 @@
-// Publicación en Cloudflare Workers como sitio estático: se sube la carpeta dist/ que genera `npm run build`.
+// Publicación en Cloudflare Workers: se sube la carpeta dist/ que genera `npm run build`.
+// Las rutas /media/* pasan primero por worker/index.js para que los videos acepten peticiones parciales.
 {
   "name": "holmex",
   "compatibility_date": "2025-09-01",
+  "main": "worker/index.js",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/media/*"]
   }
 }
