@@ -8,7 +8,6 @@
       <ProblemSolution />
       <ProductShowcase />
       <HowItWorks />
-      <SpatialSimulator />
       <RegulatoryFramework />
       <LicenseSection />
       <SupportSection />
@@ -29,7 +28,6 @@ import HeroSection from './components/HeroSection.vue'
 import ProofPoints from './components/ProofPoints.vue'
 import ProblemSolution from './components/ProblemSolution.vue'
 import RegulatoryFramework from './components/RegulatoryFramework.vue'
-import SpatialSimulator from './components/SpatialSimulator.vue'
 import ProductShowcase from './components/ProductShowcase.vue'
 import LicenseSection from './components/LicenseSection.vue'
 import TeamSection from './components/TeamSection.vue'

@@ -112,7 +112,7 @@ export const TERMINOS = {
     {
       titulo: 'Naturaleza del software',
       parrafos: [
-        'HOLMEX es una herramienta de apoyo al diseño de mallas de perforación y tronadura para labores subterráneas. Realiza cálculos a partir de métodos de la literatura técnica (Langefors–Kihlström, Holmberg–Persson, Kuz-Ram, entre otros) y de los parámetros que ingresa el usuario.',
+        'HOLMEX es una herramienta de apoyo al diseño de mallas de perforación y tronadura para labores subterráneas. Realiza cálculos a partir de métodos de la literatura técnica (Holmberg, Langefors–Kihlström y Holmberg–Persson, entre otros) y de los parámetros que ingresa el usuario.',
         'Los resultados son estimaciones técnicas. No reemplazan el criterio profesional, la validación en terreno, la medición de vibraciones ni los procedimientos de la faena.',
       ],
     },
@@ -238,15 +238,6 @@ export const METODOLOGIAS = {
         'Límites: sus constantes de atenuación y la vibración que produce daño dependen de cada sitio. Sin mediciones locales, el radio de daño es una estimación de referencia.',
     },
     {
-      titulo: 'Kuz-Ram',
-      parrafos: [
-        'El modelo Kuz-Ram combina la ecuación de Kuznetsov (1973) con la distribución de Rosin-Rammler, en la forma propuesta por Claude Cunningham (1983). Estima el tamaño medio de los fragmentos y qué tan uniforme será la granulometría.',
-        'HOLMEX lo usa para dibujar la curva de fragmentación y estimar indicadores como el P80.',
-      ],
-      cierre:
-        'Límites: tiende a subestimar la fracción de finos, no considera de forma explícita los tiempos de retardo y fue desarrollado principalmente para tronaduras en banco, por lo que en labores subterráneas su resultado es referencial.',
-    },
-    {
       titulo: 'Clasificaciones geomecánicas: RMR, Q y GSI',
       parrafos: [
         'El RMR de Bieniawski (versión 1989), el índice Q de Barton (NGI, 1974) y el GSI de Hoek describen la calidad del macizo rocoso a partir de observaciones de terreno.',
@@ -266,7 +257,6 @@ export const METODOLOGIAS = {
         'Auxiliares (o destrozo): tiros entre la rainura y el contorno que completan el arranque.',
         'Taco: tramo final del tiro sin explosivo, que confina la carga.',
         'Factor de carga: kilos de explosivo por metro cúbico de roca tronada.',
-        'P80 y X50: tamaños bajo los cuales queda el 80% y el 50% del material tronado.',
         'Radio de daño: distancia alrededor del tiro en que la roca remanente queda fracturada por la tronadura.',
         'Sobreexcavación: roca arrancada más allá del perfil de diseño de la labor.',
       ],
@@ -278,8 +268,6 @@ export const METODOLOGIAS = {
         'Langefors, U. y Kihlström, B. (1963). The Modern Technique of Rock Blasting. Almqvist & Wiksell / John Wiley & Sons.',
         'Holmberg, R. y Persson, P.-A. (1979). Design of tunnel perimeter blasthole patterns to prevent rock damage. Tunnelling 79, Institution of Mining and Metallurgy, Londres.',
         'Persson, P.-A., Holmberg, R. y Lee, J. (1994). Rock Blasting and Explosives Engineering. CRC Press.',
-        'Kuznetsov, V. M. (1973). The mean diameter of the fragments formed by blasting rock. Soviet Mining Science, 9(2).',
-        'Cunningham, C. V. B. (1983). The Kuz-Ram model for prediction of fragmentation from blasting. First International Symposium on Rock Fragmentation by Blasting, Luleå.',
         'Bieniawski, Z. T. (1989). Engineering Rock Mass Classifications. John Wiley & Sons.',
         'Barton, N., Lien, R. y Lunde, J. (1974). Engineering classification of rock masses for the design of tunnel support. Rock Mechanics, 6(4).',
         'Hoek, E. (1994). Strength of rock and rock masses. ISRM News Journal, 2(2).',

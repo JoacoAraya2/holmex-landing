@@ -73,7 +73,7 @@ const seen = new Set()
 function visit(n) { if (seen.has(n)) return; seen.add(n); comps[n].deps.forEach(visit); order.push(n) }
 Object.keys(comps).forEach(visit)
 
-const dataJs = ['content.js', 'mesh.js', 'legal.js']
+const dataJs = ['content.js', 'legal.js']
   .map((f) => fs.readFileSync(path.join(SRC, 'data', f), 'utf8').replace(/^import .*$/gm, '').replace(/^export\s+/gm, '').replace(/src: '\/media\/[^']*'/g, "src: ''"))
   .join('\n')
 

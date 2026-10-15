@@ -6,7 +6,7 @@
 
     <p class="mt-6 max-w-[60ch] text-lg" :class="sobreVideo ? 'text-ink/85' : 'text-mute'">
       HOLMEX automatiza el cálculo geométrico de frentes de avance en menos de 5 minutos. Reduce los
-      sobrecostos por sobreexcavación, predice la fragmentación (P80) y trabaja directamente en interior mina,
+      sobrecostos por sobreexcavación y trabaja directamente en interior mina,
       sin conectividad de red ni suscripciones en la nube.
     </p>
 

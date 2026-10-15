@@ -29,7 +29,7 @@
                 <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
                 <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
                 <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
-                <span class="ml-2 font-mono text-[11px] text-mute">holmex-rs.exe</span>
+                <span class="ml-2 font-mono text-[11px] text-mute">holmex.exe</span>
               </div>
               <img :src="IMAGENES[activa]" :alt="actual.titulo + ' de HOLMEX'" width="1400" height="730" class="block h-auto w-full" />
             </div>

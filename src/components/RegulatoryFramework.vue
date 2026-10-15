@@ -29,7 +29,7 @@
       </div>
 
       <div class="min-w-0">
-        <p class="font-mono text-xs uppercase tracking-[0.14em] text-mute">Escuela sueca consolidada + Kuz-Ram</p>
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-mute">Escuela sueca de tronadura y geomecánica</p>
         <div class="mt-4 grid gap-4 sm:grid-cols-2">
           <article v-for="f in FUNDAMENTOS" :key="f.titulo" class="flex min-w-0 flex-col rounded-xl border border-line/80 bg-panel/90 p-5">
             <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-glint">{{ f.codigo }}</p>

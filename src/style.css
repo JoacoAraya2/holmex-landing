@@ -165,11 +165,7 @@ textarea:focus-visible {
   outline: none;
 }
 
-/* SVG de la malla */
-.mesh-contour { fill: rgba(56, 189, 248, 0.05); stroke: var(--color-ink); stroke-width: 2.5; }
-.mesh-dim { stroke: var(--color-glint); stroke-width: 1; fill: none; }
-.mesh-dim-text { fill: var(--color-glint); font-family: var(--font-mono); font-size: 13px; }
-.mesh-cut-line { stroke: var(--color-ink); stroke-width: 1.4; fill: none; opacity: 0.85; }
+/* Colores de tiros (malla dibujada en el banner) */
 .hole { stroke-width: 2; }
 .hole-rainura { fill: var(--color-abyss); stroke: var(--color-ink); }
 .hole-vacio { fill: var(--color-abyss); stroke: var(--color-ink); stroke-width: 2; }

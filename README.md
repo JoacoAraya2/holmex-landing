@@ -13,9 +13,9 @@ npm run build    # sitio estático en dist/
 ## Estructura
 
 - `src/App.vue` — orden de las secciones.
-- `src/components/` — una sección por componente (el hero usa `HeroCopy.vue` y `VideoStack.vue`) (Header, Hero, ProofPoints, ProblemSolution, RegulatoryFramework, SpatialSimulator, ProductShowcase, MarketComparison, TeamSection, ContactSection, Footer) más `MeshDrawing.vue` (SVG de la malla) y `BrandMark.vue` (logo).
+- `src/components/` — una sección por componente (el hero usa `HeroCopy.vue` y `VideoStack.vue`) .
 - `src/data/content.js` — todos los textos comerciales, equipo, comparativa y correo de contacto.
-- `src/data/mesh.js` — motor geométrico demostrativo del simulador (simplificado, no reemplaza el núcleo Rust).
+- `src/data/legal.js` — Política de Privacidad, Términos de Uso y Metodologías.
 - `src/style.css` — paleta "Deep Mining Blue" (`@theme`) y clases base.
 
 ## Videos del banner principal
