@@ -29,7 +29,18 @@
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "description": "Diseño de mallas de perforación y tronadura para labores subterráneas de avance horizontal, 100% offline.",
-        "offers": { "@type": "Offer", "price": "2000", "priceCurrency": "USD" }
+        "offers": {
+          "@type": "Offer",
+          "price": "2000",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2000",
+            "priceCurrency": "USD",
+            "unitText": "por equipo al año",
+            "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "ANN" }
+          }
+        }
       }
     </script>
   </head>

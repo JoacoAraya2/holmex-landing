@@ -27,9 +27,9 @@ export const PROOF_POINTS = [
     texto: 'Funciona en frentes ciegas sin señal celular, enlace satelital ni conexión a internet.',
   },
   {
-    cifra: '1×',
-    titulo: 'Licencia perpetua por equipo',
-    texto: 'Sin llaves USB físicas de alto costo ni cobros mensuales sorpresivos.',
+    cifra: '1/año',
+    titulo: 'Licencia anual por equipo',
+    texto: 'Un solo pago al año por cada equipo. Sin llaves USB físicas de alto costo ni cobros mensuales sorpresivos.',
   },
   {
     cifra: '13/13',
@@ -130,10 +130,16 @@ export const HERO_VIDEOS = [
 
 export const LICENCIA = {
   precio: 'USD 2.000',
-  impuesto: '+ IVA',
-  modalidad: 'Licencia perpetua por equipo',
+  impuesto: '+ IVA / año',
+  modalidad: 'Licencia anual por equipo',
+  unidad: 'por equipo',
+  ejemplos: [
+    { equipos: 1, total: 'USD 2.000' },
+    { equipos: 3, total: 'USD 6.000' },
+    { equipos: 5, total: 'USD 10.000' },
+  ],
   atributos: [
-    { criterio: 'Modelo de cobro', valor: 'Pago único por equipo. Sin llaves USB físicas ni mensualidades.' },
+    { criterio: 'Modelo de cobro', valor: 'Pago anual de USD 2.000 + IVA por cada equipo entregado a la empresa. Sin llaves USB físicas ni mensualidades.' },
     { criterio: 'Requisitos de red', valor: '100% offline nativo, también en interior mina.' },
     { criterio: 'Capacitación', valor: 'Adopción operacional en menos de 3 horas.' },
     { criterio: 'Entregables a terreno', valor: 'Memoria en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
@@ -232,7 +238,7 @@ export const FAQ = [
   {
     pregunta: '¿Qué pasa si cambio o se daña el computador?',
     respuesta:
-      'La licencia es por equipo. Si necesita moverla a un computador nuevo, la traspasamos desactivando la instalación anterior. Este servicio tiene un costo adicional.',
+      'La licencia es anual y por equipo. Si necesita moverla a un computador nuevo, la traspasamos desactivando la instalación anterior. Este servicio tiene un costo adicional.',
   },
   {
     pregunta: '¿Cuánto toma aprender a usarlo?',
@@ -242,14 +248,14 @@ export const FAQ = [
   {
     pregunta: '¿Cuánto cuesta?',
     respuesta:
-      'USD 2.000 + IVA por equipo, en un solo pago y facturado en pesos chilenos, sin mensualidades ni llaves USB. Incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
+      'USD 2.000 + IVA al año por cada equipo entregado a la empresa, facturado en pesos chilenos, sin mensualidades ni llaves USB. Por ejemplo, una empresa con 3 equipos paga USD 6.000 + IVA al año. El primer año incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
   },
 ]
 
 // Qué incluye la licencia y qué servicios se cobran aparte. Revisar cada compromiso antes de publicar.
 export const SOPORTE = {
   incluido: [
-    { titulo: 'Licencia perpetua', texto: 'El ejecutable de HOLMEX instalado en un equipo, sin mensualidades ni fecha de término.' },
+    { titulo: 'Licencia anual', texto: 'El ejecutable de HOLMEX instalado en un equipo durante 12 meses, renovable cada año. Sin mensualidades.' },
     { titulo: 'Puesta en marcha inicial', texto: 'Instalación en su computador de faena y validación de un cálculo con una labor real.' },
     { titulo: 'Capacitación inicial', texto: 'Una capacitación para el equipo de P&T al momento de la instalación.' },
     { titulo: 'Soporte por correo gratuito', texto: 'Consultas sobre el uso del software por correo, totalmente gratis y sin costo adicional, de lunes a viernes de 08:30 a 18:00 (hora de Chile).' },

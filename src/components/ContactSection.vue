@@ -91,7 +91,7 @@ const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || ''
 const PASOS = [
   'Reunión técnica con jefatura de operaciones o planificación P&T.',
   'Cálculo en vivo de una frente con sus parámetros y litología.',
-  'Propuesta de licencia perpetua por equipo y plan de puesta en marcha.',
+  'Propuesta de licencia anual por equipo y plan de puesta en marcha.',
 ]
 
 const form = reactive({ nombre: '', empresa: '', region: '', correo: '', telefono: '', insitu: true, piloto: false, aceptaPrivacidad: false })

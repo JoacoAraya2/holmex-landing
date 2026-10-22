@@ -156,7 +156,8 @@ export const TERMINOS = {
     {
       titulo: 'Condiciones comerciales',
       lista: [
-        'El precio de la licencia se expresa en dólares estadounidenses más IVA.',
+        'El precio de la licencia es de USD 2.000 más IVA por cada equipo, con pago anual. La licencia tiene una vigencia de 12 meses desde su activación y se renueva cada año con un nuevo pago.',
+        'Si la licencia no se renueva, su uso termina al cumplirse el período anual pagado.',
         'La factura se emite en pesos chilenos, convirtiendo el precio según el dólar observado publicado por el Banco Central de Chile el día de emisión de la factura.',
         'La licencia se entrega y activa una vez confirmado el pago, según lo indicado en la propuesta comercial.',
         'Los viáticos, actualizaciones, mantenciones y demás servicios adicionales se cotizan y facturan por separado.',

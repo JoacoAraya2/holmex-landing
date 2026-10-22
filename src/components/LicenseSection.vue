@@ -5,8 +5,8 @@
         <p class="eyebrow">Licencia y precio</p>
         <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">Un precio claro, pensado para la mediana y pequeña minería</h2>
         <p class="mt-4 max-w-[58ch] text-mute">
-          Se paga una vez por equipo y el software queda instalado en su computador de faena. Sin suscripciones,
-          sin llaves físicas y sin depender de internet.
+          Se paga una vez al año por cada equipo entregado a su empresa y el software queda instalado en su computador
+          de faena. Sin mensualidades, sin llaves físicas y sin depender de internet.
         </p>
         <ul class="mt-8 flex flex-col gap-3">
           <li v-for="item in LICENCIA.incluye" :key="item" class="flex gap-3 text-ink">
@@ -20,13 +20,24 @@
         <header class="flex flex-wrap items-end justify-between gap-4 border-b border-line/70 bg-volt/10 p-6 sm:p-8">
           <div>
             <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-glint">{{ LICENCIA.modalidad }}</p>
-            <p class="mt-2 flex items-baseline gap-2">
-              <span class="num display text-5xl font-extrabold text-ink">{{ LICENCIA.precio }}</span>
+            <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
+              <span class="num display whitespace-nowrap text-5xl font-extrabold text-ink">{{ LICENCIA.precio }}</span>
               <span class="font-mono text-lg text-mute">{{ LICENCIA.impuesto }}</span>
             </p>
+            <p class="mt-1 font-mono text-sm uppercase tracking-[0.1em] text-glint">{{ LICENCIA.unidad }}</p>
           </div>
           <a href="#contacto" class="btn-primary">Solicitar propuesta</a>
         </header>
+        <div class="border-b border-line/70 px-6 py-4 sm:px-8">
+          <p class="font-mono text-xs uppercase tracking-[0.1em] text-mute">Ejemplo de costo anual</p>
+          <ul class="mt-3 grid gap-3 sm:grid-cols-3">
+            <li v-for="e in LICENCIA.ejemplos" :key="e.equipos" class="rounded-lg border border-line/60 px-4 py-3">
+              <p class="text-sm text-mute">{{ e.equipos }} {{ e.equipos === 1 ? 'equipo' : 'equipos' }}</p>
+              <p class="num mt-1 whitespace-nowrap font-semibold text-ink">{{ e.total }}</p>
+              <p class="font-mono text-xs text-mute">+ IVA al año</p>
+            </li>
+          </ul>
+        </div>
         <dl class="divide-y divide-line/50">
           <div v-for="a in LICENCIA.atributos" :key="a.criterio" class="grid gap-1 px-6 py-4 sm:grid-cols-[200px_1fr] sm:gap-6 sm:px-8">
             <dt class="font-mono text-xs uppercase tracking-[0.1em] text-mute sm:pt-0.5">{{ a.criterio }}</dt>

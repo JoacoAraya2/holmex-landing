@@ -8,7 +8,7 @@
           <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">Qué incluye la licencia y qué se cotiza aparte</h2>
         </div>
         <p class="max-w-[58ch] text-mute lg:justify-self-end">
-          HOLMEX se vende como programa ejecutable con licencia perpetua. Los servicios que la faena solicite después
+          HOLMEX se vende como programa ejecutable con licencia anual por equipo. Los servicios que la faena solicite después
           de la puesta en marcha se cotizan por separado, con un valor adicional.
         </p>
       </div>
@@ -17,7 +17,7 @@
         <article class="sheet min-w-0 rounded-xl">
           <header class="flex items-center justify-between gap-3 border-b border-line/70 px-6 py-4">
             <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-h-caj">Incluido en la licencia</p>
-            <span class="font-mono text-xs text-mute">{{ LICENCIA.precio }} {{ LICENCIA.impuesto }}</span>
+            <span class="font-mono text-xs text-mute">{{ LICENCIA.precio }} {{ LICENCIA.impuesto }} · {{ LICENCIA.unidad }}</span>
           </header>
           <ul class="divide-y divide-line/50">
             <li v-for="s in SOPORTE.incluido" :key="s.titulo" class="flex gap-4 px-6 py-4">
