@@ -129,17 +129,17 @@ export const HERO_VIDEOS = [
 ]
 
 export const LICENCIA = {
-  precio: 'USD 2.000',
+  precio: 'USD 3.000',
   impuesto: '+ IVA / año',
   modalidad: 'Licencia anual por equipo',
   unidad: 'por equipo',
   ejemplos: [
-    { equipos: 1, total: 'USD 2.000' },
-    { equipos: 3, total: 'USD 6.000' },
-    { equipos: 5, total: 'USD 10.000' },
+    { equipos: 1, total: 'USD 3.000' },
+    { equipos: 3, total: 'USD 9.000' },
+    { equipos: 5, total: 'USD 15.000' },
   ],
   atributos: [
-    { criterio: 'Modelo de cobro', valor: 'Pago anual de USD 2.000 + IVA por cada equipo entregado a la empresa. Sin llaves USB físicas ni mensualidades.' },
+    { criterio: 'Modelo de cobro', valor: 'Pago anual de USD 3.000 + IVA por cada equipo entregado a la empresa. Sin llaves USB físicas ni mensualidades.' },
     { criterio: 'Requisitos de red', valor: '100% offline nativo, también en interior mina.' },
     { criterio: 'Capacitación', valor: 'Adopción operacional en menos de 3 horas.' },
     { criterio: 'Entregables a terreno', valor: 'Memoria en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
@@ -248,7 +248,7 @@ export const FAQ = [
   {
     pregunta: '¿Cuánto cuesta?',
     respuesta:
-      'USD 2.000 + IVA al año por cada equipo entregado a la empresa, facturado en pesos chilenos, sin mensualidades ni llaves USB. Por ejemplo, una empresa con 3 equipos paga USD 6.000 + IVA al año. El primer año incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
+      'USD 3.000 + IVA al año por cada equipo entregado a la empresa, facturado en pesos chilenos, sin mensualidades ni llaves USB. Por ejemplo, una empresa con 3 equipos paga USD 9.000 + IVA al año. El primer año incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
   },
 ]
 
