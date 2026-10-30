@@ -166,6 +166,9 @@ textarea:focus-visible {
   border-color: var(--color-ion);
   outline: none;
 }
+.field[aria-invalid="true"] {
+  border-color: #f87171;
+}
 
 /* Colores de tiros (malla dibujada en el banner) */
 .hole { stroke-width: 2; }

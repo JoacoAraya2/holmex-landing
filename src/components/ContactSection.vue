@@ -27,28 +27,34 @@
 
       <div class="sheet min-w-0 rounded-xl p-6 sm:p-8">
         <form v-if="!enviado" class="grid gap-5 sm:grid-cols-2" novalidate @submit.prevent="enviar">
+          <p class="text-sm text-mute sm:col-span-2">Todos los datos de contacto son obligatorios.</p>
           <div class="sm:col-span-2">
             <label for="f-nombre" class="text-sm">Nombre del solicitante</label>
-            <input id="f-nombre" v-model.trim="form.nombre" type="text" autocomplete="name" class="field mt-2" placeholder="Nombre y apellido" />
+            <input id="f-nombre" v-model.trim="form.nombre" type="text" autocomplete="name" required class="field mt-2" placeholder="Nombre y apellido" v-bind="atributosError('nombre')" />
+            <p v-if="errores.nombre" id="e-nombre" class="mt-1.5 text-sm text-[#fca5a5]">{{ errores.nombre }}</p>
           </div>
           <div class="sm:col-span-2">
             <label for="f-empresa" class="text-sm">Empresa / Faena contratista</label>
-            <input id="f-empresa" v-model.trim="form.empresa" type="text" autocomplete="organization" class="field mt-2" placeholder="Razón social o faena" />
+            <input id="f-empresa" v-model.trim="form.empresa" type="text" autocomplete="organization" required class="field mt-2" placeholder="Razón social o faena" v-bind="atributosError('empresa')" />
+            <p v-if="errores.empresa" id="e-empresa" class="mt-1.5 text-sm text-[#fca5a5]">{{ errores.empresa }}</p>
           </div>
           <div>
             <label for="f-region" class="text-sm">Región de la operación</label>
-            <select id="f-region" v-model="form.region" class="field mt-2">
+            <select id="f-region" v-model="form.region" required class="field mt-2" v-bind="atributosError('region')">
               <option value="" disabled>Seleccione una región</option>
               <option v-for="r in REGIONES" :key="r" :value="r">{{ r }}</option>
             </select>
+            <p v-if="errores.region" id="e-region" class="mt-1.5 text-sm text-[#fca5a5]">{{ errores.region }}</p>
           </div>
           <div>
             <label for="f-telefono" class="text-sm">Teléfono / WhatsApp</label>
-            <input id="f-telefono" v-model.trim="form.telefono" type="tel" autocomplete="tel" class="field num mt-2 font-mono" placeholder="+56 9 1234 5678" />
+            <input id="f-telefono" v-model.trim="form.telefono" type="tel" autocomplete="tel" required class="field num mt-2 font-mono" placeholder="+56 9 1234 5678" v-bind="atributosError('telefono')" />
+            <p v-if="errores.telefono" id="e-telefono" class="mt-1.5 text-sm text-[#fca5a5]">{{ errores.telefono }}</p>
           </div>
           <div class="sm:col-span-2">
             <label for="f-correo" class="text-sm">Correo corporativo</label>
-            <input id="f-correo" v-model.trim="form.correo" type="email" autocomplete="email" class="field mt-2" placeholder="nombre@empresa.cl" />
+            <input id="f-correo" v-model.trim="form.correo" type="email" autocomplete="email" required class="field mt-2" placeholder="nombre@empresa.cl" v-bind="atributosError('correo')" />
+            <p v-if="errores.correo" id="e-correo" class="mt-1.5 text-sm text-[#fca5a5]">{{ errores.correo }}</p>
           </div>
           <label for="f-insitu" class="flex items-start gap-3 rounded-md border border-line/70 bg-abyss-2 p-4 text-sm sm:col-span-2">
             <input id="f-insitu" v-model="form.insitu" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
@@ -58,12 +64,13 @@
             <input id="f-piloto" v-model="form.piloto" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
             Quiero postular al programa piloto
           </label>
-          <label for="f-privacidad" class="flex items-start gap-3 text-sm text-mute sm:col-span-2">
-            <input id="f-privacidad" v-model="form.aceptaPrivacidad" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
-            <span>Acepto que HOLMEX use estos datos para responder mi solicitud, según la <a href="#/privacidad" class="text-glint underline underline-offset-2 hover:text-ink">Política de Privacidad</a>.</span>
-          </label>
-
-          <p v-if="error" class="rounded-md border border-h-cor/50 bg-h-cor/10 px-4 py-3 text-sm text-ink sm:col-span-2" role="alert">{{ error }}</p>
+          <div class="sm:col-span-2">
+            <label for="f-privacidad" class="flex items-start gap-3 text-sm text-mute">
+              <input id="f-privacidad" v-model="form.aceptaPrivacidad" type="checkbox" required class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" v-bind="atributosError('aceptaPrivacidad')" />
+              <span>Acepto que HOLMEX use estos datos para responder mi solicitud, según la <a href="#/privacidad" class="text-glint underline underline-offset-2 hover:text-ink">Política de Privacidad</a>.</span>
+            </label>
+            <p v-if="errores.aceptaPrivacidad" id="e-aceptaPrivacidad" class="mt-1.5 text-sm text-[#fca5a5]">{{ errores.aceptaPrivacidad }}</p>
+          </div>
 
           <button type="submit" class="btn-primary sm:col-span-2" :disabled="enviando">
             {{ enviando ? 'Enviando…' : 'Enviar solicitud' }}
@@ -92,7 +99,7 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed } from 'vue'
+import { reactive, ref, computed, watch } from 'vue'
 import { REGIONES, CONTACT_EMAIL } from '../data/content.js'
 
 // Endpoint opcional (Formspree, CRM, backend propio). Sin endpoint, el formulario prepara un resumen para copiar.
@@ -105,7 +112,9 @@ const PASOS = [
 ]
 
 const form = reactive({ nombre: '', empresa: '', region: '', correo: '', telefono: '', insitu: true, piloto: false, aceptaPrivacidad: false })
-const error = ref('')
+// Mensaje por campo obligatorio; se muestra bajo el campo y se asocia a él para lectores de pantalla.
+const errores = reactive({})
+const CAMPOS = ['nombre', 'empresa', 'region', 'telefono', 'correo', 'aceptaPrivacidad']
 const enviando = ref(false)
 const enviado = ref(false)
 const copiado = ref(false)
@@ -130,18 +139,43 @@ const enlaceCorreo = computed(
     `&body=${encodeURIComponent(resumen.value.replace(/\n/g, '\r\n'))}`,
 )
 
+function validar(campo) {
+  const valor = form[campo]
+  switch (campo) {
+    case 'nombre':
+      return valor ? '' : 'Escriba su nombre y apellido.'
+    case 'empresa':
+      return valor ? '' : 'Indique la empresa o faena.'
+    case 'region':
+      return valor ? '' : 'Seleccione la región de la operación.'
+    case 'telefono':
+      return valor ? '' : 'Escriba un teléfono de contacto.'
+    case 'correo':
+      if (!valor) return 'Escriba su correo corporativo.'
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor) ? '' : 'Use el formato nombre@empresa.cl.'
+    case 'aceptaPrivacidad':
+      return valor ? '' : 'Acepte la Política de Privacidad para enviar la solicitud.'
+  }
+  return ''
+}
+
+function atributosError(campo) {
+  return {
+    'aria-invalid': errores[campo] ? 'true' : undefined,
+    'aria-describedby': errores[campo] ? 'e-' + campo : undefined,
+  }
+}
+
+// Después de un intento de envío, los errores se actualizan mientras la persona corrige cada campo.
+watch(form, () => {
+  for (const campo of CAMPOS) if (errores[campo]) errores[campo] = validar(campo)
+})
+
 async function enviar() {
-  error.value = ''
-  if (!form.nombre || !form.empresa || !form.region || !form.correo || !form.telefono) {
-    error.value = 'Complete todos los campos para preparar la propuesta.'
-    return
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.correo)) {
-    error.value = 'Revise el correo corporativo: debe tener el formato nombre@empresa.cl.'
-    return
-  }
-  if (!form.aceptaPrivacidad) {
-    error.value = 'Para enviar la solicitud debe aceptar la Política de Privacidad.'
+  for (const campo of CAMPOS) errores[campo] = validar(campo)
+  const primero = CAMPOS.find((campo) => errores[campo])
+  if (primero) {
+    document.getElementById(primero === 'aceptaPrivacidad' ? 'f-privacidad' : 'f-' + primero)?.focus()
     return
   }
   if (!ENDPOINT) {
