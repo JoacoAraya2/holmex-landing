@@ -81,7 +81,8 @@
           <h3 class="text-2xl font-semibold">Envíe este resumen a {{ CONTACT_EMAIL }}</h3>
           <pre id="resumen-solicitud" class="overflow-x-auto whitespace-pre-wrap rounded-md border border-line/70 bg-abyss-2 p-4 font-mono text-[13px] text-ink">{{ resumen }}</pre>
           <div class="flex flex-wrap gap-3">
-            <button type="button" class="btn-primary" @click="copiar">{{ copiado ? 'Copiado' : 'Copiar resumen' }}</button>
+            <a :href="enlaceCorreo" class="btn-primary">Abrir en mi correo</a>
+            <button type="button" class="btn-ghost" @click="copiar">{{ copiado ? 'Copiado' : 'Copiar resumen' }}</button>
             <button type="button" class="btn-ghost" @click="enviado = false">Editar datos</button>
           </div>
         </div>
@@ -120,6 +121,13 @@ const resumen = computed(() =>
     `Prueba de cálculo in situ: ${form.insitu ? 'Sí' : 'No'}`,
     `Postula al Programa Piloto: ${form.piloto ? 'Sí' : 'No'}`,
   ].join('\n'),
+)
+
+// Abre el cliente de correo con el resumen listo para enviar (saltos de línea CRLF según RFC 6068).
+const enlaceCorreo = computed(
+  () =>
+    `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Solicitud de propuesta HOLMEX')}` +
+    `&body=${encodeURIComponent(resumen.value.replace(/\n/g, '\r\n'))}`,
 )
 
 async function enviar() {
