@@ -9,9 +9,6 @@ export const NAV = [
   { href: '#preguntas', label: 'Preguntas' },
 ]
 
-// Dominio oficial del sitio (registro en NIC Chile).
-export const DOMINIO = 'holmex.cl'
-
 // Correo oficial de HOLMEX para cotizaciones, demostraciones y soporte.
 export const CONTACT_EMAIL = 'contacto@holmex.cl'
 
