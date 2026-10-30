@@ -6,12 +6,12 @@
         <span class="display text-2xl font-extrabold tracking-tight">HOLMEX</span>
       </a>
 
-      <nav class="hidden items-center gap-1 rounded-full border border-line/60 bg-abyss-2/70 p-1 xl:flex" aria-label="Principal">
+      <nav class="hidden items-center gap-1 rounded-full border border-line/60 bg-abyss-2/70 p-1 lg:flex" aria-label="Principal">
         <a
           v-for="item in NAV"
           :key="item.href"
           :href="item.href"
-          class="relative rounded-full px-3.5 py-1.5 text-sm transition-colors"
+          class="relative rounded-full px-3 py-1.5 text-sm transition-colors xl:px-3.5"
           :class="activa === item.href ? 'bg-volt/20 text-ink shadow-[inset_0_0_0_1px_rgba(56,189,248,0.45)]' : 'text-mute hover:text-ink'"
           :aria-current="activa === item.href ? 'location' : undefined"
         >
@@ -24,7 +24,7 @@
         <button
           id="menu-toggle"
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-ink xl:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-ink lg:hidden"
           :aria-expanded="open"
           aria-controls="menu-movil"
           @click="open = !open"
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <nav v-show="open" id="menu-movil" class="gutter border-t border-line/70 bg-abyss xl:hidden" aria-label="Móvil">
+    <nav v-show="open" id="menu-movil" class="gutter border-t border-line/70 bg-abyss lg:hidden" aria-label="Móvil">
       <div class="mx-auto flex max-w-7xl flex-col py-2">
         <a
           v-for="(item, i) in NAV"
