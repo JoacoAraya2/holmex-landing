@@ -147,19 +147,19 @@ export const EQUIPO = [
   {
     nombre: 'Vicente Gago Salazar',
     rol: 'Dirección de Producto y Arquitectura',
-    detalle: 'Arquitectura de software, visualizador 2D y relación técnica con faenas.',
+    detalle: 'Diseño del producto y relación técnica con cada faena.',
     foto: 1,
   },
   {
     nombre: 'Vicente Gómez Hidalgo',
     rol: 'Motor de Cálculo y Datos',
-    detalle: 'Implementación del motor analítico Holmberg, base de datos local y repositorio.',
+    detalle: 'Desarrollo del motor de cálculo de mallas y de la gestión de datos de cada labor.',
     foto: 3,
   },
   {
     nombre: 'Joaquín Araya López',
     rol: 'Calidad y Exportación Técnica',
-    detalle: 'Subsistema de exportación PDF, Excel, CSV e IREDES y plan de pruebas bajo ISO/IEC 25010.',
+    detalle: 'Control de calidad del software y de los entregables a terreno: memoria técnica, planillas y archivo IREDES.',
     foto: 2,
   },
 ]
