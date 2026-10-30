@@ -54,37 +54,6 @@ export const SOLUCION = [
   'Expediente operacional inmediato en PDF, Excel, CSV e IREDES con la procedencia de cada parámetro.',
 ]
 
-export const FUNDAMENTOS = [
-  {
-    codigo: 'Langefors & Kihlström · 1978',
-    titulo: 'Burden máximo y balance de carga',
-    texto:
-      'Constante de roca, grado de fijación y relación espaciamiento-burden para dimensionar el burden de cada zona del frente.',
-    formula: 'B_máx = (d/33)·√(P·s / (c̄·f·E/B))',
-  },
-  {
-    codigo: 'Holmberg & Persson · 1978',
-    titulo: 'Contorno perimetral y daño inducido',
-    texto:
-      'Espaciamiento de corona de 15–16 veces el diámetro y relación E/B de 0,8 en voladura suave. Predicción del radio de daño para reducir pernos, shotcrete y marcos.',
-    formula: 'E_corona = 15·d   ·   E/B = 0,8',
-  },
-  {
-    codigo: 'Holmberg · 1982',
-    titulo: 'Rainura de tiros paralelos',
-    texto:
-      'Cuatro cuadrantes alrededor del tiro vacío de alivio, cada uno dimensionado sobre la abertura que deja el anterior, para asegurar la salida de la frente.',
-    formula: 'B₁ = 1,5·Ø_vacío',
-  },
-  {
-    codigo: 'Bieniawski RMR · Barton Q',
-    titulo: 'Caracterización del macizo',
-    texto:
-      'La calidad geomecánica del frente modula la constante de roca y la dosificación. Conversión RMR–Q incluida.',
-    formula: 'RMR → Q de Barton',
-  },
-]
-
 // Carrusel de videos del banner principal (archivos en public/media/, 1080p).
 // Todos los clips son de Pexels bajo la licencia Pexels (uso comercial libre, crédito no obligatorio):
 // https://www.pexels.com/license/
