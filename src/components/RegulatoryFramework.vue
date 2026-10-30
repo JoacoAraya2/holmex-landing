@@ -1,10 +1,12 @@
 <template>
   <section id="ds132" class="blueprint border-y border-line/60">
-    <div class="gutter mx-auto grid max-w-7xl gap-10 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <div class="gutter mx-auto grid max-w-7xl gap-6 pt-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
       <div class="min-w-0">
         <p class="eyebrow">Marco normativo</p>
         <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">La ley pide fundamento técnico. HOLMEX lo deja por escrito.</h2>
-        <p class="mt-5 max-w-[58ch] text-mute">
+      </div>
+      <div class="min-w-0 lg:justify-self-end">
+        <p class="max-w-[58ch] text-mute">
           El reglamento exige que la perforación y tronadura se rijan por procedimientos aprobados por la
           administración de la faena. No prescribe método de cálculo ni herramienta: la responsabilidad de
           fundamentar cada diseño recae en el ingeniero.
@@ -15,21 +17,9 @@
           de Sernageomin.
         </p>
       </div>
-
-      <article class="sheet min-w-0 rounded-xl p-6">
-        <p class="font-mono text-xs uppercase tracking-[0.14em] text-warn">DS N° 132 · Reglamento de Seguridad Minera · Art. 570</p>
-        <blockquote class="mt-4 border-l-2 border-ion pl-4 text-ink">
-          Cuando los efectos de una tronadura puedan afectar instalaciones, estructuras o poblados cercanos, deben ser
-          medidos y fundados en parámetros técnicos, y la empresa debe adoptar medidas de control para minimizarlos.
-        </blockquote>
-        <p class="mt-5 border-t border-line/60 pt-4 font-mono text-xs text-mute">
-          Alcance: HOLMEX no reemplaza la medición de vibraciones en terreno ni emite declaraciones de conformidad
-          sobre umbrales de vibración.
-        </p>
-      </article>
     </div>
 
-    <div class="gutter mx-auto max-w-7xl pb-20">
+    <div class="gutter mx-auto max-w-7xl pb-20 pt-10">
       <div class="sheet overflow-hidden rounded-xl">
         <header class="border-b border-line/70 bg-volt/10 p-6 sm:p-8">
           <p class="font-mono text-xs uppercase tracking-[0.14em] text-warn">DS N° 132 · Título XV · Pequeña minería (hasta 5.000 t/mes)</p>
@@ -53,6 +43,10 @@
             <dd class="text-sm text-ink"><span class="font-mono text-[11px] uppercase tracking-[0.12em] text-h-caj md:hidden">HOLMEX · </span>{{ f.holmex }}</dd>
           </div>
         </dl>
+        <p class="border-t border-line/70 px-6 py-4 font-mono text-xs text-mute sm:px-8">
+          Alcance: HOLMEX no reemplaza la medición de vibraciones en terreno ni emite declaraciones de conformidad
+          sobre umbrales de vibración.
+        </p>
       </div>
     </div>
   </section>
