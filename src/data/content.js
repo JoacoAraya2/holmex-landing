@@ -165,11 +165,11 @@ export const CAPTURAS = [
   },
 ]
 
+// Ficha técnica visible para el cliente. No publicar la tecnología interna ni métricas de desarrollo.
 export const FICHA = [
   ['Plataforma', 'Windows 10 y 11 (64 bits)'],
-  ['Núcleo de cálculo', 'Rust'],
-  ['Interfaz', 'Vue 3 sobre Tauri v2'],
-  ['Persistencia', 'SQLite local'],
+  ['Conexión', 'No requiere internet'],
+  ['Datos de la faena', 'Guardados solo en el equipo'],
   ['Exportación', 'PDF, PNG, Excel, CSV e IREDES'],
   ['Telemetría', 'Ninguna'],
 ]
@@ -226,7 +226,7 @@ export const FAQ = [
   {
     pregunta: '¿Qué computador necesito?',
     respuesta:
-      'Recomendamos Windows 11 de 64 bits, que sigue recibiendo actualizaciones de seguridad. Como HOLMEX está hecho en Rust con Tauri, usa pocos recursos: basta un notebook de faena con 4 GB de RAM (8 GB recomendado). También funciona en Windows 10, aunque Microsoft dejó de darle soporte de seguridad en octubre de 2025.',
+      'Recomendamos Windows 11 de 64 bits, que sigue recibiendo actualizaciones de seguridad. HOLMEX usa pocos recursos: basta un notebook de faena con 4 GB de RAM (8 GB recomendado). También funciona en Windows 10, aunque Microsoft dejó de darle soporte de seguridad en octubre de 2025.',
   },
   {
     pregunta: '¿Qué pasa si cambio o se daña el computador?',
@@ -278,7 +278,6 @@ export const REQUISITOS = [
   ['Procesador', '64 bits, 2 núcleos a 1 GHz o más'],
   ['Memoria RAM', '4 GB mínimo · 8 GB recomendado'],
   ['Espacio en disco', 'Menos de 100 MB, más el historial de cálculos'],
-  ['Componentes', 'Microsoft WebView2: viene con Windows 11 y el instalador lo agrega en Windows 10'],
   ['Internet', 'No requerida para instalar licencia ni para calcular'],
 ]
 
