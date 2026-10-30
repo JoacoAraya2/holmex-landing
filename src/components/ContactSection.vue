@@ -56,7 +56,7 @@
           </label>
           <label for="f-piloto" class="flex items-start gap-3 rounded-md border border-line/70 bg-abyss-2 p-4 text-sm sm:col-span-2">
             <input id="f-piloto" v-model="form.piloto" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
-            Quiero postular al Programa Piloto
+            Quiero postular al programa piloto
           </label>
           <label for="f-privacidad" class="flex items-start gap-3 text-sm text-mute sm:col-span-2">
             <input id="f-privacidad" v-model="form.aceptaPrivacidad" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#00d2ff]" />
@@ -66,7 +66,7 @@
           <p v-if="error" class="rounded-md border border-h-cor/50 bg-h-cor/10 px-4 py-3 text-sm text-ink sm:col-span-2" role="alert">{{ error }}</p>
 
           <button type="submit" class="btn-primary sm:col-span-2" :disabled="enviando">
-            {{ enviando ? 'Enviando…' : 'Solicitar Propuesta y Ficha Técnica' }}
+            {{ enviando ? 'Enviando…' : 'Solicitar propuesta y ficha técnica' }}
           </button>
         </form>
 
@@ -119,7 +119,7 @@ const resumen = computed(() =>
     `Correo: ${form.correo}`,
     `Teléfono: ${form.telefono}`,
     `Prueba de cálculo in situ: ${form.insitu ? 'Sí' : 'No'}`,
-    `Postula al Programa Piloto: ${form.piloto ? 'Sí' : 'No'}`,
+    `Postula al programa piloto: ${form.piloto ? 'Sí' : 'No'}`,
   ].join('\n'),
 )
 
