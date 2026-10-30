@@ -21,8 +21,16 @@ npm run build    # sitio estático en dist/
 ## Videos del banner principal
 
 El hero muestra un carrusel de clips a pantalla completa detrás del texto (silenciados, con fundido cada 7 s y un mensaje por clip). La lista está en
-`HERO_VIDEOS` dentro de `src/data/content.js` y los archivos en `public/media/` (1080p, licencia Pexels).
-Para sumar un clip, guárdelo en `public/media/` y agregue un objeto a la lista. Si ningún video carga,
+`HERO_VIDEOS` dentro de `src/data/content.js` y los archivos en `public/media/` (720p, licencia Pexels).
+Para sumar un clip, guárdelo en `public/media/` junto a su portada y agregue un objeto a la lista. Para mantener
+el sitio liviano en celulares, cada clip se recorta a 8 s, sin audio:
+
+```bash
+ffmpeg -i original.mp4 -t 8 -an -vf "scale=-2:720:flags=lanczos,format=yuv420p" -c:v libx264 -preset slow -crf 28 -movflags +faststart public/media/clip.mp4
+ffmpeg -i public/media/clip.mp4 -frames:v 1 -c:v libwebp -quality 72 public/media/clip.webp
+```
+
+Con "reducir movimiento" o "ahorro de datos" activados, el banner muestra solo las portadas. Si ningún video carga,
 el hero muestra una captura de la aplicación.
 
 ## Contenido que no se publica
