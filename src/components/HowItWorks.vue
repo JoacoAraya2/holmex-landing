@@ -14,7 +14,7 @@
 
       <div class="mt-16 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div class="min-w-0">
-          <p class="font-mono text-xs uppercase tracking-[0.14em] text-warn">Memoria técnica</p>
+          <p class="eyebrow">Memoria técnica</p>
           <h3 class="display mt-3 text-2xl font-extrabold sm:text-3xl">El documento que respalda cada disparo</h3>
           <p class="mt-4 max-w-[52ch] text-mute">
             Por cada labor, HOLMEX genera una memoria con los parámetros de entrada, la distribución de tiros, el

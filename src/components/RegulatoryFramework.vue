@@ -22,7 +22,7 @@
     <div class="gutter mx-auto max-w-7xl pb-20 pt-10">
       <div class="sheet overflow-hidden rounded-xl">
         <header class="border-b border-line/70 bg-volt/10 p-6 sm:p-8">
-          <p class="font-mono text-xs uppercase tracking-[0.14em] text-warn">DS N° 132 · Título XV · Pequeña minería (hasta 5.000 t/mes)</p>
+          <p class="eyebrow">DS N° 132 · Título XV · Pequeña minería (hasta 5.000 t/mes)</p>
           <h3 class="display mt-3 text-2xl font-extrabold sm:text-3xl">Lo que pide el reglamento y cómo lo apoya HOLMEX</h3>
           <p class="mt-3 max-w-[75ch] text-sm text-mute">
             Según el texto vigente del Decreto N° 1 de 2024, un Proyecto Minero debe describir la perforación y la
