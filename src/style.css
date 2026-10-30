@@ -8,6 +8,7 @@
   --color-panel-2: #162447;
   --color-line: #1e3a8a;
   --color-line-hi: #2563eb;
+  --color-field-line: #5577c2;
   --color-volt: #2563eb;
   --color-ion: #00d2ff;
   --color-glint: #38bdf8;
@@ -152,13 +153,14 @@ textarea:focus-visible {
 .field {
   width: 100%;
   background: var(--color-abyss-2);
-  border: 1px solid var(--color-line);
+  /* Borde con 3,5:1 contra la tarjeta y 4,3:1 contra el campo; texto de ejemplo con 5,8:1. */
+  border: 1px solid var(--color-field-line);
   border-radius: 6px;
   padding: 0.7rem 0.85rem;
   color: var(--color-ink);
 }
 .field::placeholder {
-  color: #5b6b85;
+  color: #8090a8;
 }
 .field:focus {
   border-color: var(--color-ion);
