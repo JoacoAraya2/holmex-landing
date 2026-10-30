@@ -32,9 +32,9 @@ export const PROOF_POINTS = [
     texto: 'Un solo pago al año por cada equipo. Sin llaves USB físicas de alto costo ni cobros mensuales sorpresivos.',
   },
   {
-    cifra: '13/13',
-    titulo: 'Trazabilidad total de parámetros',
-    texto: 'Cada constante del cálculo tiene procedencia declarada: fuente, página o heurística identificada.',
+    cifra: 'DS 132',
+    titulo: 'Respaldo normativo por disparo',
+    texto: 'Memoria de cálculo con los antecedentes de perforación y tronadura que pide el reglamento para cada labor.',
   },
 ]
 
@@ -51,7 +51,7 @@ export const SOLUCION = [
   'Diseño listo en menos de 5 minutos, con la sección dibujada a escala antes de perforar.',
   'Carga ajustada por RMR y litología, con control de energía en el contorno para proteger techo y cajas.',
   'Guía limpia para el perforista con coordenadas, profundidad y secuencia de salida.',
-  'Expediente operacional inmediato en PDF, Excel, CSV e IREDES con la procedencia de cada parámetro.',
+  'Expediente operacional inmediato en PDF, Excel, CSV e IREDES, con los parámetros y resultados de cada disparo.',
 ]
 
 // Carrusel de videos del banner principal (archivos en public/media/, 1080p).
@@ -112,7 +112,7 @@ export const LICENCIA = {
     { criterio: 'Requisitos de red', valor: '100% offline nativo, también en interior mina.' },
     { criterio: 'Capacitación', valor: 'Adopción operacional en menos de 3 horas.' },
     { criterio: 'Entregables a terreno', valor: 'Memoria en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
-    { criterio: 'Trazabilidad de fórmulas', valor: 'Cada constante con obra y página, o marcada como heurística.' },
+    { criterio: 'Respaldo técnico', valor: 'Memoria de cálculo por disparo con los parámetros de entrada y los resultados.' },
   ],
   incluye: [
     'Instalación y puesta en marcha en el computador de faena',
