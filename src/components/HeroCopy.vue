@@ -1,5 +1,6 @@
 <template>
   <div class="min-w-0">
+    <p class="eyebrow mb-4">Diseño de mallas de perforación y tronadura subterránea</p>
     <h1 class="display text-[2.6rem] font-extrabold leading-[1.02] sm:text-6xl xl:text-[4.4rem]">
       Con <span class="text-glint">HOLMEX</span> toda la minería puede
     </h1>
