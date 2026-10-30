@@ -25,16 +25,18 @@ const props = defineProps({
   actual: { type: Number, required: true },
   siguiente: { type: Number, required: true },
   sinMovimiento: { type: Boolean, default: false },
+  pausado: { type: Boolean, default: false },
 })
 const emit = defineEmits(['error'])
 const videos = []
 
-function reproducirActual() {
+// Al cambiar de clip el video parte desde el inicio; al reanudar una pausa sigue desde donde quedó.
+function reproducirActual(reiniciar = true) {
   videos.length = props.clips.length
   videos.forEach((v, i) => {
     if (!v) return
-    if (i === props.actual && !props.sinMovimiento) {
-      v.currentTime = 0
+    if (i === props.actual && !props.sinMovimiento && !props.pausado) {
+      if (reiniciar) v.currentTime = 0
       v.play().catch(() => {})
     } else {
       v.pause()
@@ -42,6 +44,7 @@ function reproducirActual() {
   })
 }
 
-watch(() => [props.actual, props.clips.length, props.sinMovimiento], reproducirActual, { flush: 'post' })
-onMounted(reproducirActual)
+watch(() => [props.actual, props.clips.length, props.sinMovimiento], () => reproducirActual(), { flush: 'post' })
+watch(() => props.pausado, () => reproducirActual(false), { flush: 'post' })
+onMounted(() => reproducirActual())
 </script>

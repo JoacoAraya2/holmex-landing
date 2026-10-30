@@ -6,7 +6,7 @@
     class="relative isolate overflow-hidden border-b border-line/60 bg-abyss"
   >
     <div class="absolute inset-0 -z-10">
-      <VideoStack :clips="clips" :actual="actual" :siguiente="siguiente" :sin-movimiento="sinMovimiento" @error="descartar" />
+      <VideoStack :clips="clips" :actual="actual" :siguiente="siguiente" :sin-movimiento="sinMovimiento" :pausado="pausado" @error="descartar" />
       <div class="absolute inset-0 bg-gradient-to-r from-abyss/95 via-abyss/60 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-abyss via-transparent to-abyss/30"></div>
       <div class="blueprint absolute inset-0 opacity-15 mix-blend-screen"></div>
@@ -16,7 +16,8 @@
       <HeroCopy sobre-video class="max-w-2xl" />
 
       <div>
-      <div class="grid grid-cols-4 items-start gap-x-3 lg:gap-x-4">
+      <div class="flex items-start gap-3 lg:gap-4">
+      <div class="grid flex-1 grid-cols-4 items-start gap-x-3 lg:gap-x-4">
         <button
           v-for="(clip, i) in clips"
           :key="clip.src"
@@ -40,6 +41,17 @@
           </span>
         </button>
       </div>
+      <button
+        v-if="clips.length > 1 && !sinMovimiento"
+        type="button"
+        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/30 bg-abyss/50 text-ink transition-colors hover:border-ink/70 lg:h-10 lg:w-10"
+        :aria-label="pausado ? 'Reanudar los videos del banner' : 'Pausar los videos del banner'"
+        @click="alternarPausa"
+      >
+        <svg v-if="pausado" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3.5 1.5v11l9-5.5z" /></svg>
+        <svg v-else width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5h2.8v11H3zM8.2 1.5H11v11H8.2z" /></svg>
+      </button>
+      </div>
       <p v-if="clipActual" :key="clipActual.src" class="titulo-clip mt-1 lg:hidden">
         <span class="block font-mono text-[11px] uppercase tracking-[0.14em] text-glint">{{ String(actual + 1).padStart(2, '0') }} · {{ clipActual.etiqueta }}</span>
         <span class="mt-1 block text-sm leading-snug text-ink">{{ clipActual.titulo }}</span>
@@ -58,7 +70,7 @@
           class="relative aspect-video max-w-full overflow-hidden rounded-xl border bg-abyss shadow-[0_30px_80px_-40px_rgba(0,210,255,0.5)]"
           :class="variante === 'hud' ? 'border-ion/40' : 'border-line-hi/60'"
         >
-          <VideoStack v-if="clips.length" :clips="clips" :actual="actual" :siguiente="siguiente" :sin-movimiento="sinMovimiento" @error="descartar" />
+          <VideoStack v-if="clips.length" :clips="clips" :actual="actual" :siguiente="siguiente" :sin-movimiento="sinMovimiento" :pausado="pausado" @error="descartar" />
           <img
             v-else
             :src="capturaApp"
@@ -98,19 +110,31 @@
                 {{ String(actual + 1).padStart(2, '0') }} / {{ String(clips.length).padStart(2, '0') }} · {{ clipActual.etiqueta }}
               </span>
               <p :key="clipActual.src" class="titulo-clip mt-1 max-w-[42ch] text-base font-semibold leading-snug text-ink sm:text-lg">{{ clipActual.titulo }}</p>
-              <div class="mt-3 flex gap-1.5" role="tablist" aria-label="Videos del banner">
+              <div class="mt-3 flex items-center gap-3">
+                <div class="flex gap-1.5" role="tablist" aria-label="Videos del banner">
+                  <button
+                    v-for="(clip, i) in clips"
+                    :key="clip.src"
+                    type="button"
+                    role="tab"
+                    :aria-selected="i === actual"
+                    :aria-label="clip.etiqueta"
+                    class="relative h-1.5 overflow-hidden rounded-full transition-all"
+                    :class="i === actual ? 'w-10 bg-ink/25' : 'w-3 bg-ink/40 hover:bg-ink/70'"
+                    @click="irA(i)"
+                  >
+                    <span v-if="i === actual" :key="'p' + actual" class="barra-progreso absolute inset-y-0 left-0 bg-glint" :style="estiloBarra"></span>
+                  </button>
+                </div>
                 <button
-                  v-for="(clip, i) in clips"
-                  :key="clip.src"
+                  v-if="clips.length > 1 && !sinMovimiento"
                   type="button"
-                  role="tab"
-                  :aria-selected="i === actual"
-                  :aria-label="clip.etiqueta"
-                  class="relative h-1.5 overflow-hidden rounded-full transition-all"
-                  :class="i === actual ? 'w-10 bg-ink/25' : 'w-3 bg-ink/40 hover:bg-ink/70'"
-                  @click="irA(i)"
+                  class="flex h-8 w-8 items-center justify-center rounded-full border border-ink/30 text-ink transition-colors hover:border-ink/70"
+                  :aria-label="pausado ? 'Reanudar los videos del banner' : 'Pausar los videos del banner'"
+                  @click="alternarPausa"
                 >
-                  <span v-if="i === actual" :key="'p' + actual" class="barra-progreso absolute inset-y-0 left-0 bg-glint" :style="estiloBarra"></span>
+                  <svg v-if="pausado" width="12" height="12" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3.5 1.5v11l9-5.5z" /></svg>
+                  <svg v-else width="12" height="12" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 1.5h2.8v11H3zM8.2 1.5H11v11H8.2z" /></svg>
                 </button>
               </div>
             </template>
@@ -123,7 +147,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { HERO_VIDEOS } from '../data/content.js'
 import HeroCopy from './HeroCopy.vue'
 import VideoStack from './VideoStack.vue'
@@ -151,18 +175,45 @@ const actual = ref(0)
 const siguiente = computed(() => (clips.value.length ? (actual.value + 1) % clips.value.length : 0))
 const clipActual = computed(() => clips.value[actual.value])
 const sinMovimiento = ref(false)
-const estiloBarra = computed(() => ({ animationDuration: `${DURACION_CLIP}s`, width: sinMovimiento.value ? '100%' : undefined }))
+const pausado = ref(false)
+const estiloBarra = computed(() => ({
+  animationDuration: `${DURACION_CLIP}s`,
+  animationPlayState: pausado.value ? 'paused' : 'running',
+  width: sinMovimiento.value ? '100%' : undefined,
+}))
 let temporizador = null
+// Milisegundos que le quedan al clip actual; se conservan al pausar para reanudar donde iba.
+let restante = DURACION_CLIP * 1000
+let inicio = 0
 
 function programar() {
   clearTimeout(temporizador)
-  if (sinMovimiento.value || clips.value.length < 2) return
-  temporizador = setTimeout(() => irA(siguiente.value), DURACION_CLIP * 1000)
+  if (sinMovimiento.value || pausado.value || clips.value.length < 2) return
+  inicio = Date.now()
+  temporizador = setTimeout(avanzar, restante)
+}
+
+// Tras una vuelta completa el banner vuelve al primer clip y queda en pausa.
+function avanzar() {
+  if (siguiente.value === 0) pausado.value = true
+  irA(siguiente.value)
 }
 
 function irA(i) {
+  restante = DURACION_CLIP * 1000
   actual.value = i
   programar()
+}
+
+function alternarPausa() {
+  if (pausado.value) {
+    pausado.value = false
+    programar()
+  } else {
+    pausado.value = true
+    clearTimeout(temporizador)
+    restante = Math.max(restante - (Date.now() - inicio), 0)
+  }
 }
 
 function descartar(src) {
@@ -172,8 +223,6 @@ function descartar(src) {
   if (actual.value >= clips.value.length) actual.value = 0
   programar()
 }
-
-watch(actual, programar)
 
 onMounted(() => {
   const pedida = new URLSearchParams(window.location.search).get('banner')
