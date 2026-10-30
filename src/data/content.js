@@ -217,7 +217,7 @@ export const FAQ = [
 // Qué incluye la licencia y qué servicios se cobran aparte. Revisar cada compromiso antes de publicar.
 export const SOPORTE = {
   incluido: [
-    { titulo: 'Licencia anual', texto: 'El ejecutable de HOLMEX instalado en un equipo durante 12 meses, renovable cada año. Sin mensualidades.' },
+    { titulo: 'Licencia anual', texto: 'HOLMEX instalado en un equipo durante 12 meses, renovable cada año. Sin mensualidades.' },
     { titulo: 'Puesta en marcha inicial', texto: 'Instalación en su computador de faena y validación de un cálculo con una labor real.' },
     { titulo: 'Capacitación inicial', texto: 'Una capacitación para el equipo de P&T al momento de la instalación.' },
     { titulo: 'Soporte por correo', texto: `Consultas sobre el uso del software a ${CONTACT_EMAIL}, sin costo, de lunes a viernes de 08:30 a 18:00 (hora de Chile).` },
