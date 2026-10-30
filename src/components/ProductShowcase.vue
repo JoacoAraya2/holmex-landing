@@ -54,11 +54,10 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { CAPTURAS, FICHA } from '../data/content.js'
-import imgInicio from '../assets/app-inicio.webp'
 import imgParametros from '../assets/app-parametros.webp'
 import imgMalla from '../assets/app-malla.webp'
 
-const IMAGENES = { inicio: imgInicio, parametros: imgParametros, malla: imgMalla }
+const IMAGENES = { parametros: imgParametros, malla: imgMalla }
 const activa = ref('malla')
 const actual = computed(() => CAPTURAS.find((c) => c.id === activa.value))
 </script>

@@ -154,11 +154,6 @@ export const LICENCIA = {
 
 export const CAPTURAS = [
   {
-    id: 'inicio',
-    titulo: 'Panel de inicio',
-    texto: 'Historial local de cálculos y estadísticas por mes. Todo queda en el equipo, en una base SQLite.',
-  },
-  {
     id: 'parametros',
     titulo: 'Parámetros de la labor',
     texto: 'Sección, barra, diámetros, precio del ANFO y caracterización geomecánica RMR, Q y GSI con presets de terreno.',
