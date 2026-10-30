@@ -6,10 +6,11 @@
     class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
     :class="i === actual ? 'opacity-100' : 'opacity-0'"
     :src="clip.src"
+    :poster="clip.poster"
     muted
     loop
     playsinline
-    :preload="i === actual || i === siguiente ? 'auto' : 'none'"
+    :preload="precarga(i)"
     :aria-hidden="i !== actual"
     aria-label="Operación en un túnel de minería subterránea"
     @error="emit('error', clip.src)"
@@ -29,6 +30,13 @@ const props = defineProps({
 })
 const emit = defineEmits(['error'])
 const videos = []
+
+// Sin movimiento basta la portada. Si no, se descarga el clip visible y del siguiente solo sus metadatos.
+function precarga(i) {
+  if (props.sinMovimiento) return 'none'
+  if (i === props.actual) return 'auto'
+  return i === props.siguiente ? 'metadata' : 'none'
+}
 
 // Al cambiar de clip el video parte desde el inicio; al reanudar una pausa sigue desde donde quedó.
 function reproducirActual(reiniciar = true) {

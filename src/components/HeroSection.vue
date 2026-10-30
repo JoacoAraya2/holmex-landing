@@ -174,7 +174,11 @@ const clips = ref(HERO_VIDEOS.filter((c) => c.src))
 const actual = ref(0)
 const siguiente = computed(() => (clips.value.length ? (actual.value + 1) % clips.value.length : 0))
 const clipActual = computed(() => clips.value[actual.value])
-const sinMovimiento = ref(false)
+// Sin movimiento: el sistema pide reducir movimiento o el navegador pide ahorrar datos. Se decide antes de
+// montar los videos para que no alcancen a descargarse; en ese caso se ven solo las portadas.
+const sinMovimiento = ref(
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches || Boolean(navigator.connection?.saveData),
+)
 const pausado = ref(false)
 const estiloBarra = computed(() => ({
   animationDuration: `${DURACION_CLIP}s`,
@@ -227,7 +231,6 @@ function descartar(src) {
 onMounted(() => {
   const pedida = new URLSearchParams(window.location.search).get('banner')
   if (VARIANTES.includes(pedida)) variante.value = pedida
-  sinMovimiento.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   programar()
 })
 

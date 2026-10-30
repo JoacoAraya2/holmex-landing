@@ -51,13 +51,15 @@ export const SOLUCION = [
   'Expediente operacional inmediato en PDF, Excel, CSV e IREDES, con los parámetros y resultados de cada disparo.',
 ]
 
-// Carrusel de videos del banner principal (archivos en public/media/, 1080p).
+// Carrusel de videos del banner principal (archivos en public/media/, 720p, 8 s, sin audio).
+// Cada clip tiene una imagen de portada (poster) con su primer cuadro, que se ve mientras carga.
 // Todos los clips son de Pexels bajo la licencia Pexels (uso comercial libre, crédito no obligatorio):
 // https://www.pexels.com/license/
 // Para agregar otro clip basta con sumar un objeto a esta lista.
 export const HERO_VIDEOS = [
   {
-    src: '/media/hero-mineria-1080.mp4',
+    src: '/media/hero-mineria.mp4',
+    poster: '/media/hero-mineria.webp',
     etiqueta: 'Frente de avance',
     titulo: 'Geometría de la frente calculada en menos de 5 minutos',
     dato: '< 5 min',
@@ -67,6 +69,7 @@ export const HERO_VIDEOS = [
   },
   {
     src: '/media/tunel-excavadora.mp4',
+    poster: '/media/tunel-excavadora.webp',
     etiqueta: 'Sobreexcavación',
     titulo: 'Menos sobrecostos por sobreexcavación en cada disparo',
     dato: 'Contorno',
@@ -76,6 +79,7 @@ export const HERO_VIDEOS = [
   },
   {
     src: '/media/tunel-maquinaria.mp4',
+    poster: '/media/tunel-maquinaria.webp',
     etiqueta: 'Plano operativo',
     titulo: 'Plano acotado listo para marcar la frente',
     dato: '2D · 3D',
@@ -85,6 +89,7 @@ export const HERO_VIDEOS = [
   },
   {
     src: '/media/tunel-cuadrilla.mp4',
+    poster: '/media/tunel-cuadrilla.webp',
     etiqueta: 'Interior mina',
     titulo: 'Funciona sin red ni nube, directo en la labor',
     dato: '0 red',
