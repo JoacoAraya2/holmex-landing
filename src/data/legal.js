@@ -35,6 +35,7 @@ export const PRIVACIDAD = {
         'Región de la operación.',
         'Correo electrónico corporativo y teléfono.',
         'Si solicita una prueba de cálculo en terreno.',
+        'Si postula al programa piloto.',
       ],
       cierre:
         'No solicitamos datos sensibles ni datos de menores de edad. El sitio no usa cookies propias, herramientas de analítica ni publicidad.',
