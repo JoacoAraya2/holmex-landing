@@ -45,7 +45,6 @@
               <dd class="num text-right font-mono text-ink">{{ v }}</dd>
             </div>
           </dl>
-          <p class="mt-4 text-xs text-mute">Tiempos medidos en Intel Core i5-10300H, 16 GB RAM, Windows 11, compilación release.</p>
         </aside>
       </div>
     </div>

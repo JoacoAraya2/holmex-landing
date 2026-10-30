@@ -171,13 +171,11 @@ export const CAPTURAS = [
 ]
 
 export const FICHA = [
-  ['Plataforma', 'Windows · ejecutable de ~12 MB'],
+  ['Plataforma', 'Windows 10 y 11 (64 bits)'],
   ['Núcleo de cálculo', 'Rust'],
   ['Interfaz', 'Vue 3 sobre Tauri v2'],
   ['Persistencia', 'SQLite local'],
-  ['Inicio de la aplicación', '1,42 s (mediana)'],
   ['Exportación', 'PDF, PNG, Excel, CSV e IREDES'],
-  ['Cobertura de pruebas del núcleo', '87,5%'],
   ['Telemetría', 'Ninguna'],
 ]
 
