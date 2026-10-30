@@ -25,10 +25,14 @@
           :aria-pressed="i === actual"
           @click="irA(i)"
         >
-          <span class="block h-0.5 overflow-hidden rounded-full bg-ink/20">
-            <span v-if="i === actual" :key="'p' + actual" class="barra-progreso block h-full bg-glint" :style="estiloBarra"></span>
+          <span class="sr-only lg:hidden">{{ clip.etiqueta }}</span>
+          <!-- Zona táctil de 44 px alrededor de la barra: en celular los textos del clip están ocultos. -->
+          <span class="flex h-11 items-center lg:h-10">
+            <span class="block h-0.5 w-full overflow-hidden rounded-full bg-ink/20">
+              <span v-if="i === actual" :key="'p' + actual" class="barra-progreso block h-full bg-glint" :style="estiloBarra"></span>
+            </span>
           </span>
-          <span class="mt-3 hidden font-mono text-[11px] uppercase tracking-[0.14em] lg:block" :class="i === actual ? 'text-glint' : 'text-mute group-hover:text-ink'">
+          <span class="mt-1 hidden font-mono text-[11px] uppercase tracking-[0.14em] lg:block" :class="i === actual ? 'text-glint' : 'text-mute group-hover:text-ink'">
             {{ String(i + 1).padStart(2, '0') }} · {{ clip.etiqueta }}
           </span>
           <span class="mt-1 hidden text-sm leading-snug transition-colors lg:block" :class="i === actual ? 'text-ink' : 'text-ink/50 group-hover:text-ink/80'">
@@ -36,7 +40,7 @@
           </span>
         </button>
       </div>
-      <p v-if="clipActual" :key="clipActual.src" class="titulo-clip mt-3 lg:hidden">
+      <p v-if="clipActual" :key="clipActual.src" class="titulo-clip mt-1 lg:hidden">
         <span class="block font-mono text-[11px] uppercase tracking-[0.14em] text-glint">{{ String(actual + 1).padStart(2, '0') }} · {{ clipActual.etiqueta }}</span>
         <span class="mt-1 block text-sm leading-snug text-ink">{{ clipActual.titulo }}</span>
       </p>
