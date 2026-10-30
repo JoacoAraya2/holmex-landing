@@ -1,5 +1,6 @@
 // Publicación en Cloudflare Workers: se sube la carpeta dist/ que genera `npm run build`.
 // Las rutas /media/* pasan primero por worker/index.js para que los videos acepten peticiones parciales.
+// Las páginas legales usan rutas con "#" (#/privacidad), así que una ruta inexistente responde 404 con public/404.html.
 {
   "name": "holmex",
   "compatibility_date": "2025-09-01",
@@ -7,7 +8,7 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application",
+    "not_found_handling": "404-page",
     "run_worker_first": ["/media/*"]
   }
 }
