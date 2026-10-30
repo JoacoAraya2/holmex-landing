@@ -14,6 +14,15 @@
             <span class="pt-1 text-ink">{{ paso }}</span>
           </li>
         </ol>
+
+        <div class="mt-10 border-t border-line/60 pt-6">
+          <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Contacto oficial</p>
+          <a :href="'mailto:' + CONTACT_EMAIL" class="mt-2 inline-flex items-center gap-2.5 text-lg font-semibold text-ink transition-colors hover:text-glint">
+            <svg class="shrink-0 text-glint" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" /><path d="M3 5.5l7 5.5 7-5.5" /></svg>
+            {{ CONTACT_EMAIL }}
+          </a>
+          <p class="mt-1 text-sm text-mute">Cotizaciones, demostraciones y soporte a clientes.</p>
+        </div>
       </div>
 
       <div class="sheet min-w-0 rounded-xl p-6 sm:p-8">

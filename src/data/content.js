@@ -12,7 +12,7 @@ export const NAV = [
 // Dominio oficial del sitio (registro en NIC Chile).
 export const DOMINIO = 'holmex.cl'
 
-// Reemplazar por el correo comercial real antes de publicar el sitio.
+// Correo oficial de HOLMEX para cotizaciones, demostraciones y soporte.
 export const CONTACT_EMAIL = 'contacto@holmex.cl'
 
 export const PROOF_POINTS = [
@@ -220,7 +220,7 @@ export const SOPORTE = {
     { titulo: 'Licencia anual', texto: 'El ejecutable de HOLMEX instalado en un equipo durante 12 meses, renovable cada año. Sin mensualidades.' },
     { titulo: 'Puesta en marcha inicial', texto: 'Instalación en su computador de faena y validación de un cálculo con una labor real.' },
     { titulo: 'Capacitación inicial', texto: 'Una capacitación para el equipo de P&T al momento de la instalación.' },
-    { titulo: 'Soporte por correo gratuito', texto: 'Consultas sobre el uso del software por correo, totalmente gratis y sin costo adicional, de lunes a viernes de 08:30 a 18:00 (hora de Chile).' },
+    { titulo: 'Soporte por correo', texto: `Consultas sobre el uso del software a ${CONTACT_EMAIL}, sin costo, de lunes a viernes de 08:30 a 18:00 (hora de Chile).` },
     { titulo: 'Garantía de cálculo', texto: 'Si detecta un error en el motor de cálculo de su versión, lo corregimos sin costo.' },
   ],
   adicional: [
