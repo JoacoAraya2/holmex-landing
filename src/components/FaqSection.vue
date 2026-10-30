@@ -7,7 +7,7 @@
         <p class="mt-4 max-w-[48ch] text-mute">
           ¿Tiene otra duda? Escríbanos y se la respondemos con un ejemplo calculado para su labor.
         </p>
-        <a href="#contacto" class="btn-ghost mt-6">Hacer una consulta</a>
+        <a :href="'mailto:' + CONTACT_EMAIL" class="btn-ghost mt-6">Escribir una consulta</a>
       </div>
 
       <div class="flex min-w-0 flex-col gap-3">
@@ -30,7 +30,7 @@
 
 <script setup>
 import { onMounted, onBeforeUnmount } from 'vue'
-import { FAQ } from '../data/content.js'
+import { FAQ, CONTACT_EMAIL } from '../data/content.js'
 
 // Datos estructurados FAQPage para que Google pueda mostrar las preguntas en los resultados.
 let datosEstructurados = null

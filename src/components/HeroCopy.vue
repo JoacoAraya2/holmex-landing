@@ -13,7 +13,7 @@
 
     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
       <a href="#contacto" class="btn-primary">
-        Agendar demostración en faena
+        Agendar demostración
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
       </a>
       <a href="#ds132" class="btn-ghost">Ver respaldo normativo DS 132</a>

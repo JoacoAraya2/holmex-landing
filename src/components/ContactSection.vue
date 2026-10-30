@@ -66,7 +66,7 @@
           <p v-if="error" class="rounded-md border border-h-cor/50 bg-h-cor/10 px-4 py-3 text-sm text-ink sm:col-span-2" role="alert">{{ error }}</p>
 
           <button type="submit" class="btn-primary sm:col-span-2" :disabled="enviando">
-            {{ enviando ? 'Enviando…' : 'Solicitar propuesta y ficha técnica' }}
+            {{ enviando ? 'Enviando…' : 'Enviar solicitud' }}
           </button>
         </form>
 

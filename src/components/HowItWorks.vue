@@ -21,7 +21,7 @@
             consumo estimado de explosivo, los planos 2D acotados, la vista 3D y el dossier geomecánico con el radio de
             daño. Es el respaldo técnico que la Administración puede presentar ante una fiscalización de Sernageomin.
           </p>
-          <a href="#contacto" class="btn-primary mt-6">Solicitar una demostración</a>
+          <a href="#contacto" class="btn-primary mt-6">Agendar demostración</a>
         </div>
 
         <div class="min-w-0 rounded-xl border border-line/80 bg-panel/90">
