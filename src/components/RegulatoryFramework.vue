@@ -31,7 +31,7 @@
             proyectista y de la empresa.
           </p>
         </header>
-        <div class="hidden grid-cols-[170px_1fr_1fr] gap-6 border-b border-line/60 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-mute md:grid sm:px-8">
+        <div class="hidden grid-cols-[170px_1fr_1fr] gap-6 border-b border-line/60 px-6 py-3 font-mono text-xs uppercase tracking-[0.12em] text-mute md:grid sm:px-8">
           <span>Artículo</span>
           <span>Lo que exige</span>
           <span>Lo que entrega HOLMEX</span>
@@ -40,7 +40,7 @@
           <div v-for="f in DS132_TITULO_XV" :key="f.articulo" class="grid gap-2 px-6 py-4 sm:px-8 md:grid-cols-[170px_1fr_1fr] md:gap-6">
             <dt class="font-mono text-xs text-glint md:pt-0.5">{{ f.articulo }}</dt>
             <dd class="text-sm text-mute">{{ f.exige }}</dd>
-            <dd class="text-sm text-ink"><span class="font-mono text-[11px] uppercase tracking-[0.12em] text-h-caj md:hidden">HOLMEX · </span>{{ f.holmex }}</dd>
+            <dd class="text-sm text-ink"><span class="font-mono text-xs uppercase tracking-[0.12em] text-h-caj md:hidden">HOLMEX · </span>{{ f.holmex }}</dd>
           </div>
         </dl>
         <p class="border-t border-line/70 px-6 py-4 font-mono text-xs text-mute sm:px-8">

@@ -24,7 +24,7 @@
         </div>
 
         <div class="min-w-0 p-6 sm:p-10">
-          <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-glint">Qué recibe su faena</p>
+          <p class="font-mono text-xs uppercase tracking-[0.14em] text-glint">Qué recibe su faena</p>
           <ul class="mt-5 flex flex-col gap-4">
             <li v-for="b in PILOTO.beneficios" :key="b" class="flex gap-3 text-ink">
               <svg class="mt-1 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#38bdf8" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" /></svg>
@@ -32,7 +32,7 @@
             </li>
           </ul>
           <p class="mt-8 border-t border-line/60 pt-5 text-sm text-mute">
-            <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Quiénes pueden postular · </span>{{ PILOTO.requisitos }}
+            <span class="font-mono text-xs uppercase tracking-[0.14em] text-mute">Quiénes pueden postular · </span>{{ PILOTO.requisitos }}
           </p>
         </div>
       </div>

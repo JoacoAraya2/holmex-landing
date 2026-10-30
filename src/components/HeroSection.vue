@@ -33,7 +33,7 @@
               <span v-if="i === actual" :key="'p' + actual" class="barra-progreso block h-full bg-glint" :style="estiloBarra"></span>
             </span>
           </span>
-          <span class="mt-1 hidden font-mono text-[11px] uppercase tracking-[0.14em] lg:block" :class="i === actual ? 'text-glint' : 'text-mute group-hover:text-ink'">
+          <span class="mt-1 hidden font-mono text-xs uppercase tracking-[0.14em] lg:block" :class="i === actual ? 'text-glint' : 'text-mute group-hover:text-ink'">
             {{ String(i + 1).padStart(2, '0') }} · {{ clip.etiqueta }}
           </span>
           <span class="mt-1 hidden text-sm leading-snug transition-colors lg:block" :class="i === actual ? 'text-ink' : 'text-ink/50 group-hover:text-ink/80'">
@@ -53,7 +53,7 @@
       </button>
       </div>
       <p v-if="clipActual" :key="clipActual.src" class="titulo-clip mt-1 lg:hidden">
-        <span class="block font-mono text-[11px] uppercase tracking-[0.14em] text-glint">{{ String(actual + 1).padStart(2, '0') }} · {{ clipActual.etiqueta }}</span>
+        <span class="block font-mono text-xs uppercase tracking-[0.14em] text-glint">{{ String(actual + 1).padStart(2, '0') }} · {{ clipActual.etiqueta }}</span>
         <span class="mt-1 block text-sm leading-snug text-ink">{{ clipActual.titulo }}</span>
       </p>
       </div>
@@ -93,20 +93,20 @@
             <span class="pointer-events-none absolute right-3 top-3 h-6 w-6 border-r-2 border-t-2 border-ion/80"></span>
             <span class="pointer-events-none absolute bottom-3 left-3 h-6 w-6 border-b-2 border-l-2 border-ion/80"></span>
             <span class="pointer-events-none absolute bottom-3 right-3 h-6 w-6 border-b-2 border-r-2 border-ion/80"></span>
-            <div class="pointer-events-none absolute inset-x-5 top-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-ink/80">
+            <div class="pointer-events-none absolute inset-x-5 top-5 flex items-center justify-between font-mono text-xs uppercase tracking-[0.16em] text-ink/80">
               <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 animate-pulse rounded-full bg-h-cor"></span>Frente {{ String(actual + 1).padStart(2, '0') }}</span>
               <span>HOLMEX · modo sin conexión</span>
             </div>
             <div class="pointer-events-none absolute right-5 top-12 rounded-md border border-ion/40 bg-abyss/70 px-3 py-2 text-right backdrop-blur-sm">
               <span :key="clipActual.dato" class="dato-hud display block text-2xl font-extrabold text-glint">{{ clipActual.dato }}</span>
-              <span class="block font-mono text-[10px] uppercase tracking-widest text-mute">{{ clipActual.datoDetalle }}</span>
+              <span class="block font-mono text-xs uppercase tracking-widest text-mute">{{ clipActual.datoDetalle }}</span>
             </div>
           </template>
 
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss/90 via-abyss/10 to-transparent"></div>
           <figcaption class="absolute inset-x-0 bottom-0 p-4" :class="variante === 'hud' ? 'px-6 pb-6' : ''">
             <template v-if="clipActual">
-              <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-glint">
+              <span class="font-mono text-xs uppercase tracking-[0.14em] text-glint">
                 {{ String(actual + 1).padStart(2, '0') }} / {{ String(clips.length).padStart(2, '0') }} · {{ clipActual.etiqueta }}
               </span>
               <p :key="clipActual.src" class="titulo-clip mt-1 max-w-[42ch] text-base font-semibold leading-snug text-ink sm:text-lg">{{ clipActual.titulo }}</p>
@@ -138,7 +138,7 @@
                 </button>
               </div>
             </template>
-            <span v-else class="font-mono text-[11px] uppercase tracking-[0.14em] text-ink">Frentes de avance · minería subterránea</span>
+            <span v-else class="font-mono text-xs uppercase tracking-[0.14em] text-ink">Frentes de avance · minería subterránea</span>
           </figcaption>
         </div>
       </figure>

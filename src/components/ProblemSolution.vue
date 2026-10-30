@@ -17,7 +17,7 @@
         <article class="min-w-0 rounded-xl border border-line/70 bg-abyss-2 p-6 sm:p-8">
           <header class="flex items-center justify-between gap-3 border-b border-line/60 pb-4">
             <h3 class="text-xl font-semibold">Práctica tradicional</h3>
-            <span class="rounded border border-warn/50 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-warn">Riesgo</span>
+            <span class="rounded border border-warn/50 px-2 py-0.5 font-mono text-xs uppercase tracking-wider text-warn">Riesgo</span>
           </header>
           <ul class="mt-5 flex flex-col gap-4">
             <li v-for="t in PROBLEMA" :key="t" class="flex gap-3 text-mute">
@@ -30,7 +30,7 @@
         <article class="sheet min-w-0 rounded-xl p-6 sm:p-8">
           <header class="flex items-center justify-between gap-3 border-b border-line/60 pb-4">
             <h3 class="text-xl font-semibold">Con HOLMEX</h3>
-            <span class="rounded border border-ion/50 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-ion">Control</span>
+            <span class="rounded border border-ion/50 px-2 py-0.5 font-mono text-xs uppercase tracking-wider text-ion">Control</span>
           </header>
           <ul class="mt-5 flex flex-col gap-4">
             <li v-for="t in SOLUCION" :key="t" class="flex gap-3 text-ink">

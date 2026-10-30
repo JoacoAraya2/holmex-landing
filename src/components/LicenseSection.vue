@@ -18,7 +18,7 @@
       <article class="sheet min-w-0 overflow-hidden rounded-xl">
         <header class="flex flex-wrap items-end justify-between gap-4 border-b border-line/70 bg-volt/10 p-6 sm:p-8">
           <div>
-            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-glint">{{ LICENCIA.modalidad }}</p>
+            <p class="font-mono text-xs uppercase tracking-[0.14em] text-glint">{{ LICENCIA.modalidad }}</p>
             <p class="mt-2 flex flex-wrap items-baseline gap-x-2">
               <span class="num display whitespace-nowrap text-5xl font-extrabold text-ink">{{ LICENCIA.precio }}</span>
               <span class="font-mono text-lg text-mute">{{ LICENCIA.impuesto }}</span>

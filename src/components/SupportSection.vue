@@ -16,7 +16,7 @@
       <div class="mt-10 grid gap-6 lg:grid-cols-2">
         <article class="sheet min-w-0 rounded-xl">
           <header class="flex items-center justify-between gap-3 border-b border-line/70 px-6 py-4">
-            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-h-caj">Incluido en la licencia</p>
+            <p class="font-mono text-xs uppercase tracking-[0.14em] text-h-caj">Incluido en la licencia</p>
             <span class="font-mono text-xs text-mute">{{ LICENCIA.precio }} {{ LICENCIA.impuesto }} · {{ LICENCIA.unidad }}</span>
           </header>
           <ul class="divide-y divide-line/50">
@@ -32,7 +32,7 @@
 
         <article class="min-w-0 rounded-xl border border-warn/40 bg-panel/90">
           <header class="flex items-center justify-between gap-3 border-b border-warn/30 px-6 py-4">
-            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-warn">Con costo adicional</p>
+            <p class="font-mono text-xs uppercase tracking-[0.14em] text-warn">Con costo adicional</p>
             <span class="font-mono text-xs text-mute">Se cotiza por solicitud</span>
           </header>
           <ul class="divide-y divide-line/50">

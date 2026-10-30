@@ -21,15 +21,15 @@
 
     <dl class="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-line/60 pt-6 font-mono">
       <div>
-        <dt class="text-[11px] uppercase tracking-widest text-mute">Antes</dt>
+        <dt class="text-xs uppercase tracking-widest text-mute">Antes</dt>
         <dd class="num mt-1 text-lg text-ink">55–120 min</dd>
       </div>
       <div>
-        <dt class="text-[11px] uppercase tracking-widest text-mute">Con HOLMEX</dt>
+        <dt class="text-xs uppercase tracking-widest text-mute">Con HOLMEX</dt>
         <dd class="num mt-1 text-lg text-glint">&lt; 5 min</dd>
       </div>
       <div>
-        <dt class="text-[11px] uppercase tracking-widest text-mute">Red requerida</dt>
+        <dt class="text-xs uppercase tracking-widest text-mute">Red requerida</dt>
         <dd class="num mt-1 text-lg text-ink">Ninguna</dd>
       </div>
     </dl>

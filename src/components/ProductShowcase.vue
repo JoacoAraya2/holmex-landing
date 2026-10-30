@@ -29,7 +29,7 @@
               <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
               <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
               <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
-              <span class="ml-2 font-mono text-[11px] text-mute">HOLMEX</span>
+              <span class="ml-2 font-mono text-xs text-mute">HOLMEX</span>
             </div>
             <img :src="IMAGENES[activa]" :alt="actual.titulo + ' de HOLMEX'" width="1400" height="730" class="block h-auto w-full" />
           </div>
@@ -37,7 +37,7 @@
         </figure>
 
         <aside class="sheet min-w-0 overflow-hidden rounded-xl">
-          <p class="border-b border-line/60 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-glint">Ficha técnica</p>
+          <p class="border-b border-line/60 px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-glint">Ficha técnica</p>
           <dl class="divide-y divide-line/50">
             <div v-for="[k, v] in FICHA" :key="k" class="flex flex-col gap-1 px-5 py-3">
               <dt class="font-mono text-xs uppercase tracking-[0.08em] text-mute">{{ k }}</dt>

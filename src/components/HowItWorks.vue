@@ -25,7 +25,7 @@
         </div>
 
         <div class="min-w-0 rounded-xl border border-line/80 bg-panel/90">
-          <p class="border-b border-line/60 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-glint">Requisitos del computador</p>
+          <p class="border-b border-line/60 px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-glint">Requisitos del computador</p>
           <dl class="divide-y divide-line/50">
             <div v-for="[campo, valor] in REQUISITOS" :key="campo" class="grid gap-1 px-5 py-3 sm:grid-cols-[150px_1fr] sm:gap-4">
               <dt class="font-mono text-xs uppercase tracking-[0.08em] text-mute sm:pt-0.5">{{ campo }}</dt>
