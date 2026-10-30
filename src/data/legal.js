@@ -1,17 +1,23 @@
 // Textos legales del sitio: Política de Privacidad y Términos de Uso.
 // Redactados como base con normativa chilena vigente a octubre de 2026. Deben ser revisados por un abogado
-// antes de publicar. Completar los datos de EMPRESA (los marcados entre corchetes).
-import { CONTACT_EMAIL } from './content.js'
+// antes de cobrar la primera licencia.
+import { CONTACT_EMAIL, EQUIPO } from './content.js'
+
+// HOLMEX aún no está constituido como sociedad: mientras tanto responden sus fundadores como personas naturales.
+// Al constituirla, reemplazar estos textos por la razón social, el RUT y el domicilio de la sociedad.
+const FUNDADORES = EQUIPO.map((p) => p.nombre)
 
 export const EMPRESA = {
-  razonSocial: '[Razón social de HOLMEX]',
-  rut: '[RUT]',
-  domicilio: '[Domicilio comercial, comuna, región]',
+  responsables: `${FUNDADORES.slice(0, -1).join(', ')} y ${FUNDADORES.at(-1)}`,
+  ciudad: 'La Serena, Chile',
   ciudadTribunales: 'La Serena',
   correo: CONTACT_EMAIL,
 }
 
-export const ACTUALIZADO = '15 de octubre de 2026'
+const IDENTIFICACION = `HOLMEX es un emprendimiento en proceso de constitución como sociedad. Mientras tanto, los responsables son sus fundadores, ${EMPRESA.responsables}, con domicilio en ${EMPRESA.ciudad}.`
+const AVISO_CONSTITUCION = 'Una vez constituida la sociedad, informaremos en esta página su razón social, RUT y domicilio.'
+
+export const ACTUALIZADO = '30 de octubre de 2026'
 
 export const PRIVACIDAD = {
   id: 'privacidad',
@@ -23,7 +29,8 @@ export const PRIVACIDAD = {
     {
       titulo: 'Responsable del tratamiento',
       parrafos: [
-        `${EMPRESA.razonSocial}, RUT ${EMPRESA.rut}, con domicilio en ${EMPRESA.domicilio}. Correo de contacto para materias de privacidad: ${EMPRESA.correo}.`,
+        `${IDENTIFICACION} Correo de contacto para materias de privacidad: ${EMPRESA.correo}.`,
+        AVISO_CONSTITUCION,
       ],
     },
     {
@@ -108,7 +115,7 @@ export const TERMINOS = {
   secciones: [
     {
       titulo: 'Identificación',
-      parrafos: [`Este sitio pertenece a ${EMPRESA.razonSocial}, RUT ${EMPRESA.rut}, con domicilio en ${EMPRESA.domicilio}.`],
+      parrafos: [`${IDENTIFICACION} Correo de contacto: ${EMPRESA.correo}.`, AVISO_CONSTITUCION],
     },
     {
       titulo: 'Naturaleza del software',
