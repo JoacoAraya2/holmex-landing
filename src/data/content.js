@@ -180,7 +180,7 @@ export const FAQ = [
   {
     pregunta: '¿Qué método de cálculo usa?',
     respuesta:
-      'El método de Roger Holmberg para frentes de avance, con rainura de cuatro cuadrantes en torno a un tiro de alivio, apoyado en Langefors–Kihlström y Holmberg–Persson. Incluye evaluación geomecánica RMR (Bieniawski 1989), índice Q de Barton y GSI, y estima el radio de daño y una recomendación de soporte.',
+      'Se basa en el método de Holmberg para frentes de avance, una referencia reconocida en el diseño de mallas para túneles y galerías, e incorpora la caracterización geomecánica del macizo con RMR, Q y GSI. Además estima el radio de daño en el contorno y entrega una recomendación de fortificación de referencia.',
   },
   {
     pregunta: '¿Funciona sin internet en interior mina?',
@@ -236,7 +236,7 @@ export const SOPORTE = {
 // Sección "Cómo funciona": pasos del flujo de trabajo en el software.
 export const COMO_FUNCIONA = [
   { titulo: 'Ingrese la labor', texto: 'Sección, largo de barra, diámetros, explosivo y caracterización del macizo con RMR, Q y GSI.' },
-  { titulo: 'Calcule en segundos', texto: 'El motor Holmberg dimensiona rainura, zapateras, cajas, coronas y auxiliares, y compara el modo estándar con el recomendado.' },
+  { titulo: 'Calcule en segundos', texto: 'El motor de cálculo dimensiona rainura, zapateras, cajas, coronas y auxiliares, y compara el diseño estándar con el recomendado.' },
   { titulo: 'Revise y ajuste', texto: 'Plano 2D acotado, modelo 3D con desviación, simuladores de tiempos y de jumbo, y mapa de energía para validar el diseño.' },
   { titulo: 'Entregue a terreno', texto: 'Memoria técnica en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
 ]
@@ -290,7 +290,7 @@ export const DS132_TITULO_XV = [
   {
     articulo: 'Art. 601 N° 15',
     exige: 'Proponer el diagrama de disparo estándar que se usará en las labores de avance.',
-    holmex: 'Diseño estándar Holmberg y diseño optimizado para cada sección, como base del diagrama que se presenta en el proyecto.',
+    holmex: 'Diseño estándar y diseño optimizado para cada sección, como base del diagrama que se presenta en el proyecto.',
   },
   {
     articulo: 'Art. 609 letra d y art. 648',

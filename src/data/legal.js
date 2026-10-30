@@ -112,7 +112,7 @@ export const TERMINOS = {
     {
       titulo: 'Naturaleza del software',
       parrafos: [
-        'HOLMEX es una herramienta de apoyo al diseño de mallas de perforación y tronadura para labores subterráneas. Realiza cálculos a partir de métodos de la literatura técnica (Holmberg, Langefors–Kihlström y Holmberg–Persson, entre otros) y de los parámetros que ingresa el usuario.',
+        'HOLMEX es una herramienta de apoyo al diseño de mallas de perforación y tronadura para labores subterráneas. Realiza cálculos a partir de métodos reconocidos de la literatura técnica de perforación, tronadura y geomecánica, y de los parámetros que ingresa el usuario.',
         'Los resultados son estimaciones técnicas. No reemplazan el criterio profesional, la validación en terreno, la medición de vibraciones ni los procedimientos de la faena.',
       ],
     },
