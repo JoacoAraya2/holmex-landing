@@ -5,8 +5,7 @@
         <p class="eyebrow">Licencia y precio</p>
         <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">Un precio claro, pensado para la mediana y pequeña minería</h2>
         <p class="mt-4 max-w-[58ch] text-mute">
-          Se paga una vez al año por cada equipo entregado a su empresa y el software queda instalado en su computador
-          de faena. Sin mensualidades, sin llaves físicas y sin depender de internet.
+          Se paga una vez al año por cada computador de faena con HOLMEX instalado. Sin mensualidades, sin llaves físicas y sin depender de internet.
         </p>
         <ul class="mt-8 flex flex-col gap-3">
           <li v-for="item in LICENCIA.incluye" :key="item" class="flex gap-3 text-ink">
@@ -31,8 +30,8 @@
         <div class="border-b border-line/70 px-6 py-4 sm:px-8">
           <p class="font-mono text-xs uppercase tracking-[0.1em] text-mute">Ejemplo de costo anual</p>
           <ul class="mt-3 grid gap-3 sm:grid-cols-3">
-            <li v-for="e in LICENCIA.ejemplos" :key="e.equipos" class="rounded-lg border border-line/60 px-4 py-3">
-              <p class="text-sm text-mute">{{ e.equipos }} {{ e.equipos === 1 ? 'equipo' : 'equipos' }}</p>
+            <li v-for="e in LICENCIA.ejemplos" :key="e.computadores" class="rounded-lg border border-line/60 px-4 py-3">
+              <p class="text-sm text-mute">{{ e.computadores }} {{ e.computadores === 1 ? 'computador' : 'computadores' }}</p>
               <p class="num mt-1 whitespace-nowrap font-semibold text-ink">{{ e.total }}</p>
               <p class="font-mono text-xs text-mute">+ IVA al año</p>
             </li>

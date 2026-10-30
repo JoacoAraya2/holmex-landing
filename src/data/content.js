@@ -25,8 +25,8 @@ export const PROOF_POINTS = [
   },
   {
     cifra: '1/año',
-    titulo: 'Licencia anual por equipo',
-    texto: 'Un solo pago al año por cada equipo. Sin llaves USB físicas de alto costo ni cobros mensuales sorpresivos.',
+    titulo: 'Licencia anual por computador',
+    texto: 'Un solo pago al año por cada computador con HOLMEX instalado. Sin llaves USB físicas de alto costo ni cobros mensuales sorpresivos.',
   },
   {
     cifra: 'DS 132',
@@ -102,15 +102,15 @@ export const HERO_VIDEOS = [
 export const LICENCIA = {
   precio: 'USD 3.000',
   impuesto: '+ IVA / año',
-  modalidad: 'Licencia anual por equipo',
-  unidad: 'por equipo',
+  modalidad: 'Licencia anual por computador',
+  unidad: 'por computador',
   ejemplos: [
-    { equipos: 1, total: 'USD 3.000' },
-    { equipos: 3, total: 'USD 9.000' },
-    { equipos: 5, total: 'USD 15.000' },
+    { computadores: 1, total: 'USD 3.000' },
+    { computadores: 3, total: 'USD 9.000' },
+    { computadores: 5, total: 'USD 15.000' },
   ],
   atributos: [
-    { criterio: 'Modelo de cobro', valor: 'Pago anual de USD 3.000 + IVA por cada equipo entregado a la empresa. Sin llaves USB físicas ni mensualidades.' },
+    { criterio: 'Modelo de cobro', valor: 'Pago anual de USD 3.000 + IVA por cada computador con HOLMEX instalado. Sin llaves USB físicas ni mensualidades.' },
     { criterio: 'Requisitos de red', valor: '100% offline nativo, también en interior mina.' },
     { criterio: 'Capacitación', valor: 'Adopción operacional en menos de 3 horas.' },
     { criterio: 'Entregables a terreno', valor: 'Memoria en PDF, coordenadas en Excel o CSV y archivo IREDES para el jumbo.' },
@@ -140,7 +140,7 @@ export const CAPTURAS = [
 export const FICHA = [
   ['Plataforma', 'Windows 10 y 11 (64 bits)'],
   ['Conexión', 'No requiere internet'],
-  ['Datos de la faena', 'Guardados solo en el equipo'],
+  ['Datos de la faena', 'Guardados solo en el computador'],
   ['Exportación', 'PDF, PNG, Excel, CSV e IREDES'],
   ['Telemetría', 'Ninguna'],
 ]
@@ -187,7 +187,7 @@ export const FAQ = [
   {
     pregunta: '¿Funciona sin internet en interior mina?',
     respuesta:
-      'Sí. Es una aplicación de escritorio 100% offline. Los cálculos se guardan en una base de datos local del propio equipo y el software no envía telemetría ni datos de su faena a HOLMEX.',
+      'Sí. Es una aplicación de escritorio 100% offline. Los cálculos se guardan en una base de datos local del propio computador y el software no envía telemetría ni datos de su faena a HOLMEX.',
   },
   {
     pregunta: '¿En qué formatos entrega los resultados?',
@@ -202,7 +202,7 @@ export const FAQ = [
   {
     pregunta: '¿Qué pasa si cambio o se daña el computador?',
     respuesta:
-      'La licencia es anual y por equipo. Si necesita moverla a un computador nuevo, la traspasamos desactivando la instalación anterior. Este servicio tiene un costo adicional.',
+      'La licencia es anual y por computador. Si necesita moverla a un computador nuevo, la traspasamos desactivando la instalación anterior. Este servicio tiene un costo adicional.',
   },
   {
     pregunta: '¿Cuánto toma aprender a usarlo?',
@@ -212,14 +212,14 @@ export const FAQ = [
   {
     pregunta: '¿Cuánto cuesta?',
     respuesta:
-      'USD 3.000 + IVA al año por cada equipo entregado a la empresa, facturado en pesos chilenos, sin mensualidades ni llaves USB. Por ejemplo, una empresa con 3 equipos paga USD 9.000 + IVA al año. El primer año incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
+      'USD 3.000 + IVA al año por cada computador con HOLMEX instalado, facturado en pesos chilenos, sin mensualidades ni llaves USB. Por ejemplo, una empresa que usa HOLMEX en 3 computadores paga USD 9.000 + IVA al año. El primer año incluye la instalación inicial y la capacitación inicial. Los viáticos, actualizaciones, mantenciones y servicios adicionales se cotizan aparte.',
   },
 ]
 
 // Qué incluye la licencia y qué servicios se cobran aparte. Revisar cada compromiso antes de publicar.
 export const SOPORTE = {
   incluido: [
-    { titulo: 'Licencia anual', texto: 'HOLMEX instalado en un equipo durante 12 meses, renovable cada año. Sin mensualidades.' },
+    { titulo: 'Licencia anual', texto: 'HOLMEX instalado en un computador durante 12 meses, renovable cada año. Sin mensualidades.' },
     { titulo: 'Puesta en marcha inicial', texto: 'Instalación en su computador de faena y validación de un cálculo con una labor real.' },
     { titulo: 'Capacitación inicial', texto: 'Una capacitación para el equipo de P&T al momento de la instalación.' },
     { titulo: 'Soporte por correo', texto: `Consultas sobre el uso del software a ${CONTACT_EMAIL}, sin costo, de lunes a viernes de 08:30 a 18:00 (hora de Chile).` },

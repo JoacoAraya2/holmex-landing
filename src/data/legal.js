@@ -81,7 +81,7 @@ export const PRIVACIDAD = {
     {
       titulo: 'Datos de su faena y el software HOLMEX',
       parrafos: [
-        'El software HOLMEX funciona sin conexión a internet en los equipos del cliente. Los parámetros de las labores, diseños y memorias de cálculo que se generan con el software quedan en esos equipos y no se transmiten a HOLMEX.',
+        'El software HOLMEX funciona sin conexión a internet en los computadores del cliente. Los parámetros de las labores, diseños y memorias de cálculo que se generan con el software quedan en esos computadores y no se transmiten a HOLMEX.',
       ],
     },
     {
@@ -144,12 +144,12 @@ export const TERMINOS = {
     {
       titulo: 'Licencia de uso',
       parrafos: [
-        'Cada licencia permite instalar y usar HOLMEX en un solo equipo del cliente. La licencia es personal del cliente que la adquiere.',
+        'Cada licencia permite instalar y usar HOLMEX en un solo computador del cliente. La licencia es personal del cliente que la adquiere.',
       ],
       lista: [
         'Está prohibido revender, ceder, arrendar o sublicenciar la licencia a terceros.',
-        'Está prohibido compartir la licencia o instalar el software en más equipos que los licenciados.',
-        'El traspaso a otro equipo del mismo cliente se realiza solo a través de HOLMEX, como servicio con costo adicional.',
+        'Está prohibido compartir la licencia o instalar el software en más computadores que los licenciados.',
+        'El traspaso a otro computador del mismo cliente se realiza solo a través de HOLMEX, como servicio con costo adicional.',
       ],
       cierre:
         'El incumplimiento de estas condiciones permite a HOLMEX dar por terminada la licencia, sin perjuicio de las acciones legales que correspondan.',
@@ -157,7 +157,7 @@ export const TERMINOS = {
     {
       titulo: 'Condiciones comerciales',
       lista: [
-        'El precio de la licencia es de USD 3.000 más IVA por cada equipo, con pago anual. La licencia tiene una vigencia de 12 meses desde su activación y se renueva cada año con un nuevo pago.',
+        'El precio de la licencia es de USD 3.000 más IVA por cada computador, con pago anual. La licencia tiene una vigencia de 12 meses desde su activación y se renueva cada año con un nuevo pago.',
         'Si la licencia no se renueva, su uso termina al cumplirse el período anual pagado.',
         'La factura se emite en pesos chilenos, convirtiendo el precio según el dólar observado publicado por el Banco Central de Chile el día de emisión de la factura.',
         'La licencia se entrega y activa una vez confirmado el pago, según lo indicado en la propuesta comercial.',

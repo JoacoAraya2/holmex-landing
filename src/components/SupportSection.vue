@@ -8,7 +8,7 @@
           <h2 class="display mt-3 text-3xl font-extrabold sm:text-4xl">Qué incluye la licencia y qué se cotiza aparte</h2>
         </div>
         <p class="max-w-[58ch] text-mute lg:justify-self-end">
-          HOLMEX se entrega como aplicación de escritorio con licencia anual por equipo. Los servicios que la faena solicite después
+          HOLMEX se entrega como aplicación de escritorio con licencia anual por computador. Los servicios que la faena solicite después
           de la puesta en marcha se cotizan por separado, con un valor adicional.
         </p>
       </div>
