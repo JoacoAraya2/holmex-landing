@@ -62,7 +62,7 @@ export const HERO_VIDEOS = [
   {
     src: '/media/hero-mineria-1080.mp4',
     etiqueta: 'Frente de avance',
-    titulo: 'Geometría del frente calculada en menos de 5 minutos',
+    titulo: 'Geometría de la frente calculada en menos de 5 minutos',
     dato: '< 5 min',
     datoDetalle: 'Diseño del diagrama de disparo',
     // Autor: Dominik Zítka
