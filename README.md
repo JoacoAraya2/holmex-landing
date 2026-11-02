@@ -45,7 +45,7 @@ El sitio es público y cualquiera puede leer sus textos. No agregar:
 ## Antes de publicar
 
 1. Al constituir la sociedad, reemplazar en `src/data/legal.js` la identificación de los fundadores por la razón social, el RUT y el domicilio de la sociedad. No cobrar licencias ni emitir facturas antes de eso.
-2. Opcional: copiar `.env.example` a `.env` y definir `VITE_FORM_ENDPOINT` (Formspree, CRM o backend) para que el formulario envíe las solicitudes. Sin endpoint, el formulario abre el correo del visitante con la solicitud dirigida a `contacto@holmex.cl`.
+2. El formulario envía las solicitudes a Formspree (`https://formspree.io/f/xwllwodw`), que las reenvía a `contacto@holmex.cl`. Para usar otro servicio, definir `VITE_FORM_ENDPOINT` en `.env`. Si el envío falla, el formulario ofrece abrir el correo del visitante con la solicitud.
 3. Verificar que cada foto en `src/assets/team-*.webp` corresponda al nombre asignado en `EQUIPO`.
 
 `scripts/build-preview.mjs` genera una versión de un solo archivo HTML (Vue por CDN) para vistas previas.

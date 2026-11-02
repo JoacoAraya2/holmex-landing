@@ -102,8 +102,8 @@
 import { reactive, ref, computed, watch } from 'vue'
 import { REGIONES, CONTACT_EMAIL } from '../data/content.js'
 
-// Endpoint opcional (Formspree, CRM, backend propio). Sin endpoint, el formulario prepara un resumen para copiar.
-const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || ''
+// Formspree reenvía cada solicitud a contacto@holmex.cl. VITE_FORM_ENDPOINT permite cambiarlo sin tocar el código.
+const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || 'https://formspree.io/f/xwllwodw'
 
 const PASOS = [
   'Reunión técnica con jefatura de operaciones o planificación P&T.',
@@ -187,7 +187,17 @@ async function enviar() {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ ...form }),
+      // Formspree usa "email" como dirección de respuesta y "_subject" como asunto del correo.
+      body: JSON.stringify({
+        _subject: `Solicitud de propuesta HOLMEX · ${form.empresa}`,
+        email: form.correo,
+        Nombre: form.nombre,
+        Empresa: form.empresa,
+        Región: form.region,
+        Teléfono: form.telefono,
+        'Prueba in situ': form.insitu ? 'Sí' : 'No',
+        'Programa piloto': form.piloto ? 'Sí' : 'No',
+      }),
     })
     if (!res.ok) throw new Error(String(res.status))
     enviado.value = 'remoto'
