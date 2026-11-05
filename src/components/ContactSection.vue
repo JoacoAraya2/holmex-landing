@@ -98,8 +98,23 @@
   </section>
 </template>
 
+<script>
+import { reactive, ref } from 'vue'
+
+// Estado a nivel de módulo: sobrevive cuando la sección se desmonta al abrir la Política de Privacidad (#/privacidad)
+// y se vuelve a montar al regresar, para que la persona no pierda lo que escribió.
+const form = reactive({ nombre: '', empresa: '', region: '', correo: '', telefono: '', insitu: true, piloto: false, aceptaPrivacidad: false })
+const errores = reactive({})
+const enviado = ref(false)
+
+// El botón "Postular al programa piloto" llama a esto para dejar marcada la casilla del piloto.
+export function marcarPiloto() {
+  form.piloto = true
+}
+</script>
+
 <script setup>
-import { reactive, ref, computed, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { REGIONES, CONTACT_EMAIL } from '../data/content.js'
 
 // Formspree reenvía cada solicitud a contacto@holmex.cl. VITE_FORM_ENDPOINT permite cambiarlo sin tocar el código.
@@ -111,12 +126,9 @@ const PASOS = [
   'Propuesta de licencia anual por computador y plan de puesta en marcha.',
 ]
 
-const form = reactive({ nombre: '', empresa: '', region: '', correo: '', telefono: '', insitu: true, piloto: false, aceptaPrivacidad: false })
-// Mensaje por campo obligatorio; se muestra bajo el campo y se asocia a él para lectores de pantalla.
-const errores = reactive({})
+// errores: mensaje por campo obligatorio; se muestra bajo el campo y se asocia a él para lectores de pantalla.
 const CAMPOS = ['nombre', 'empresa', 'region', 'telefono', 'correo', 'aceptaPrivacidad']
 const enviando = ref(false)
-const enviado = ref(false)
 const copiado = ref(false)
 
 const resumen = computed(() =>
@@ -149,7 +161,8 @@ function validar(campo) {
     case 'region':
       return valor ? '' : 'Seleccione la región de la operación.'
     case 'telefono':
-      return valor ? '' : 'Escriba un teléfono de contacto.'
+      if (!valor) return 'Escriba un teléfono de contacto.'
+      return valor.replace(/\D/g, '').length >= 8 ? '' : 'Revise el teléfono: debe tener al menos 8 dígitos.'
     case 'correo':
       if (!valor) return 'Escriba su correo corporativo.'
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor) ? '' : 'Use el formato nombre@empresa.cl.'

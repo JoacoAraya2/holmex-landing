@@ -20,7 +20,7 @@
             </div>
           </div>
 
-          <a href="#contacto" class="btn-primary mt-8">Postular al programa piloto</a>
+          <a href="#contacto" class="btn-primary mt-8" @click="marcarPiloto">Postular al programa piloto</a>
         </div>
 
         <div class="min-w-0 p-6 sm:p-10">
@@ -42,6 +42,7 @@
 
 <script setup>
 import { PILOTO } from '../data/content.js'
+import { marcarPiloto } from './ContactSection.vue'
 
 const disponibles = Math.max(PILOTO.cupos - PILOTO.ocupados, 0)
 </script>
