@@ -2,3 +2,11 @@ node_modules
 dist
 .env
 .wrangler
+# Demo: el núcleo de Holmex-RS y el motor compilado no se publican en este repositorio.
+motor/core/
+motor/target/
+worker/motor.wasm
+# Secretos y contraseñas de la demo
+.dev.vars
+demo-secretos*.json
+demo-cuentas*.txt

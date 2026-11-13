@@ -1,6 +1,11 @@
 // Publicación en Cloudflare Workers: se sube la carpeta dist/ que genera `npm run build`.
 // Las rutas /media/* pasan primero por worker/index.js para que los videos acepten peticiones parciales.
+// Las rutas /api/* pasan por el Worker: ahí corre la demo (inicio de sesión y motor de cálculo).
 // Las páginas legales usan rutas con "#" (#/privacidad), así que una ruta inexistente responde 404 con public/404.html.
+//
+// Secretos de la demo (no van en este archivo; se cargan con `npx wrangler secret bulk <archivo>`):
+//   DEMO_CUENTAS  cuentas de prueba con su contraseña cifrada y fecha de vencimiento
+//   DEMO_SECRETO  clave con que se firman las sesiones
 {
   "name": "holmex",
   "compatibility_date": "2025-09-01",
@@ -9,6 +14,13 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/media/*"]
-  }
+    "run_worker_first": ["/media/*", "/api/*"]
+  },
+  // Registro de inicios de sesión y cálculos de la demo (Workers Logs, panel del Worker > Logs).
+  "observability": { "enabled": true },
+  // Límites de la demo: 10 intentos de inicio de sesión por minuto por IP y 30 cálculos por minuto por cuenta.
+  "ratelimits": [
+    { "name": "DEMO_LIMITE_LOGIN", "namespace_id": "4101", "simple": { "limit": 10, "period": 60 } },
+    { "name": "DEMO_LIMITE_CALCULO", "namespace_id": "4102", "simple": { "limit": 30, "period": 60 } }
+  ]
 }

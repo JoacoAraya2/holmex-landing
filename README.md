@@ -49,3 +49,18 @@ El sitio es público y cualquiera puede leer sus textos. No agregar:
 3. Verificar que cada foto en `src/assets/team-*.webp` corresponda al nombre asignado en `EQUIPO`.
 
 `scripts/build-preview.mjs` genera una versión de un solo archivo HTML (Vue por CDN) para vistas previas.
+
+## Demo web con acceso privado (sección #demo)
+
+Las empresas invitadas ingresan con un usuario y contraseña, eligen los parámetros de una labor y ven
+la malla en 2D y 3D. El cálculo corre en el Worker de Cloudflare (`worker/demo.js` + `worker/motor.wasm`);
+el navegador solo recibe el resultado recortado. Ver `motor/README.md`.
+
+- **Cuentas:** no hay base de datos. Las cuentas (admin1, admin2, …) viven en el secreto `DEMO_CUENTAS`
+  con su contraseña cifrada y fecha de vencimiento. Se crean con
+  `node scripts/crear-cuentas-demo.mjs 5 AAAA-MM-DD ..`, que deja las contraseñas en
+  `../demo-cuentas-PRIVADO.txt` y los secretos en `../demo-secretos.json`. Se suben con
+  `npx wrangler secret bulk ../demo-secretos.json` y después se borra ese archivo.
+- **Registro de uso:** cada ingreso y cálculo queda en Cloudflare, Worker `holmex` > Logs.
+- **Límites:** 10 intentos de ingreso por minuto por IP y 30 cálculos por minuto por cuenta (`wrangler.jsonc`).
+- **Quitar una cuenta o extender el plazo:** volver a correr el script y subir los secretos.

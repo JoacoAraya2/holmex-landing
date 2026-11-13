@@ -5,6 +5,7 @@ export const NAV = [
   { href: '#como-funciona', label: 'Cómo funciona' },
   { href: '#ds132', label: 'DS 132' },
   { href: '#licencia', label: 'Precio' },
+  { href: '#demo', label: 'Demo' },
   { href: '#piloto', label: 'Piloto' },
   { href: '#preguntas', label: 'Preguntas' },
 ]
@@ -251,6 +252,24 @@ export const REQUISITOS = [
   ['Espacio en disco', 'Menos de 100 MB, más el historial de cálculos'],
   ['Internet', 'No requerida para instalar licencia ni para calcular'],
 ]
+
+// Demo web con acceso privado (sección #demo). El cálculo corre en el servidor de HOLMEX.
+export const DEMO = {
+  duracion: '30 días',
+  incluye: [
+    'Malla de perforación calculada con el motor real de HOLMEX, método Holmberg.',
+    'Plano 2D del frente con cada tipo de tiro.',
+    'Vista 3D de la labor y de los tiros perforados.',
+    'Número de tiros, largo de tiro y avance esperado.',
+  ],
+  // Lo que queda reservado para la licencia; se muestra con candado dentro de la demo.
+  bloqueado: [
+    { titulo: 'Carga y costo de explosivo', texto: 'Kg por tipo de tiro, factor de carga y costo del disparo.' },
+    { titulo: 'Geomecánica', texto: 'RMR, Q, GSI y radio de daño en el contorno.' },
+    { titulo: 'Secuencia y fragmentación', texto: 'Retardos de detonación y fragmentación Kuz-Ram.' },
+    { titulo: 'Plano acotado y exportaciones', texto: 'Memoria técnica en PDF, CSV, IREDES, iSURE y Epiroc RCS.' },
+  ],
+}
 
 // Programa piloto. Actualizar "ocupados" a medida que se sumen faenas.
 export const PILOTO = {

@@ -1,7 +1,14 @@
-// Worker de Cloudflare: sirve los videos de /media con soporte de peticiones parciales (Range).
-// Safari e iPhone solo reproducen un video si el servidor responde 206 con el trozo pedido.
+// Worker de Cloudflare: atiende la demo (/api/demo/*) y sirve los videos de /media con soporte de
+// peticiones parciales (Range). Safari e iPhone solo reproducen un video si el servidor responde 206
+// con el trozo pedido.
+import { atenderDemo } from './demo.js'
+
 export default {
   async fetch(request, env) {
+    const { pathname } = new URL(request.url)
+    if (pathname.startsWith('/api/demo/')) return atenderDemo(request, env)
+    if (pathname.startsWith('/api/')) return new Response('No encontrado', { status: 404 })
+
     const respuesta = await env.ASSETS.fetch(request)
     const rango = request.headers.get('Range')
     if (respuesta.status !== 200) return respuesta

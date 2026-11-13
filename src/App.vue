@@ -12,6 +12,7 @@
       <LicenseSection />
       <SupportSection />
       <TeamSection />
+      <DemoSection />
       <PilotSection />
       <FaqSection />
       <ContactSection />
@@ -37,6 +38,7 @@ import LegalPage from './components/LegalPage.vue'
 import SupportSection from './components/SupportSection.vue'
 import HowItWorks from './components/HowItWorks.vue'
 import PilotSection from './components/PilotSection.vue'
+import DemoSection from './components/DemoSection.vue'
 import FaqSection from './components/FaqSection.vue'
 import WhatsAppButton from './components/WhatsAppButton.vue'
 import { DOCUMENTOS_LEGALES } from './data/legal.js'
